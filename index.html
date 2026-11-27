@@ -1,83 +1,654 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#081222">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#081222">
 <title>PAMIR DIGITAL STUDIO</title>
 <style>
 :root{--bg:#081222;--panel:#101f35;--panel2:#172b46;--txt:#f4f8ff;--muted:#a5b4c9;--line:#2a405d;--a:#27a9f5;--b:#39d8d2}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.8 Tahoma,Arial,sans-serif}body.light{--bg:#eef3fa;--panel:#fff;--panel2:#e5edf7;--txt:#17263c;--muted:#65758b;--line:#d3deeb}
-button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:#081222ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}body.light header{background:#ffffffed}.head{height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:18px;font-weight:900;letter-spacing:.5px}.brand span{color:var(--b)}.iconbtn,.btn{border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--txt);padding:9px 14px}.iconbtn{font-size:21px}.btn.primary{background:linear-gradient(100deg,#168fe9,#20c7d5);border:0;color:white;font-weight:bold}.btn:hover,.iconbtn:hover{filter:brightness(1.13);transform:translateY(-1px)}
-.drawer{position:fixed;z-index:40;right:-310px;top:0;height:100%;width:285px;padding:20px;background:var(--panel);border-left:1px solid var(--line);transition:.3s;overflow:auto}.drawer.open{right:0}.overlay{display:none;position:fixed;inset:0;background:#0009;z-index:35}.overlay.show{display:block}.drawerhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.nav{width:100%;display:flex;gap:12px;align-items:center;text-align:right;padding:11px 13px;border:1px solid transparent;background:none;color:var(--txt);border-radius:11px;margin:4px 0}.nav:hover,.nav.active{background:var(--panel2);border-color:var(--line);color:var(--b)}.nav i{font-style:normal;font-size:20px;width:27px}
-.page{display:none;padding:35px 0 60px;min-height:65vh}.page.active{display:block}.hero{text-align:center;padding:75px 0 65px;background:radial-gradient(ellipse at 50% 0%,#123b65,transparent 68%)}.tag{display:inline-block;border:1px solid #2678a5;color:var(--b);border-radius:30px;padding:4px 14px;font-size:12px}.hero h1{font-size:clamp(32px,7vw,60px);line-height:1.35;margin:18px 0}.gradient{background:linear-gradient(90deg,var(--a),var(--b));background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{max-width:650px;margin:0 auto 24px;color:var(--muted)}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.sectionhead{text-align:center;margin:0 0 25px}.sectionhead h2{font-size:27px;margin:0 0 5px}.sectionhead p,.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 12px 35px #0002}.card h3{margin:6px 0}.card p{margin:0;color:var(--muted);font-size:13px}.serviceicon{height:48px;width:48px;display:grid;place-items:center;border-radius:14px;background:#123653;font-size:24px;margin-bottom:10px}.banner{margin-top:28px;padding:28px;text-align:center;border:1px solid #245075;border-radius:17px;background:linear-gradient(120deg,#102947,#102033)}.gallerytools{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:18px 0}.filter{border:1px solid var(--line);background:var(--panel);color:var(--txt);padding:7px 14px;border-radius:25px}.filter.active{background:#147db7;color:white}.project{padding:0;overflow:hidden}.project img{width:100%;height:165px;object-fit:cover;display:block;background:var(--panel2)}.project .info{padding:14px}.formcard{max-width:740px;margin:auto}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{margin-bottom:12px}.full{grid-column:1/-1}label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}input,textarea,select{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--txt);outline:none}textarea{min-height:110px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--a)}.note{font-size:12px;color:var(--muted);margin-top:9px}.rowline{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.contactline{padding:13px;background:var(--panel);border-radius:11px;margin:10px 0}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:right;font-size:13px}th{color:var(--b)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.status{padding:4px 8px;border-radius:20px;background:var(--panel2);font-size:12px}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,100px);opacity:0;background:#16445a;color:white;padding:11px 18px;border-radius:11px;z-index:80;transition:.25s;max-width:92%;text-align:center}.toast.show{transform:translate(-50%,0);opacity:1}footer{border-top:1px solid var(--line);padding:25px 0;text-align:center;color:var(--muted);font-size:13px}.hidden{display:none!important}.no-motion *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.8 Tahoma,Arial,sans-serif}
+body.light{--bg:#eef3fa;--panel:#fff;--panel2:#e5edf7;--txt:#17263c;--muted:#65758b;--line:#d3deeb}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#081222ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+body.light header{background:#ffffffed}
+.head{height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:18px;font-weight:900;letter-spacing:.5px}
+.brand span{color:var(--b)}
+.iconbtn,.btn{border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--txt);padding:9px 14px}
+.iconbtn{font-size:21px}
+.btn.primary{background:linear-gradient(100deg,#168fe9,#20c7d5);border:0;color:white;font-weight:bold}
+.btn:hover,.iconbtn:hover{filter:brightness(1.13);transform:translateY(-1px)}
+.drawer{position:fixed;z-index:40;right:-310px;top:0;height:100%;width:285px;padding:20px;background:var(--panel);border-left:1px solid var(--line);transition:.3s;overflow:auto}
+.drawer.open{right:0}
+html[dir="ltr"] .drawer{right:auto;left:-310px;border-left:0;border-right:1px solid var(--line)}
+html[dir="ltr"] .drawer.open{left:0}
+.overlay{display:none;position:fixed;inset:0;background:#0009;z-index:35}
+.overlay.show{display:block}
+.drawerhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.nav{width:100%;display:flex;gap:12px;align-items:center;text-align:start;padding:11px 13px;border:1px solid transparent;background:none;color:var(--txt);border-radius:11px;margin:4px 0}
+.nav:hover,.nav.active{background:var(--panel2);border-color:var(--line);color:var(--b)}
+.nav i{font-style:normal;font-size:20px;width:27px}
+.page{display:none;padding:35px 0 60px;min-height:65vh}
+.page.active{display:block}
+.hero{text-align:center;padding:75px 0 65px;background:radial-gradient(ellipse at 50% 0%,#123b65,transparent 68%)}
+.tag{display:inline-block;border:1px solid #2678a5;color:var(--b);border-radius:30px;padding:4px 14px;font-size:12px}
+.hero h1{font-size:clamp(32px,7vw,60px);line-height:1.35;margin:18px 0}
+.gradient{background:linear-gradient(90deg,var(--a),var(--b));background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{max-width:650px;margin:0 auto 24px;color:var(--muted)}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.sectionhead{text-align:center;margin:0 0 25px}
+.sectionhead h2{font-size:27px;margin:0 0 5px}
+.sectionhead p,.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 12px 35px #0002}
+.card h3{margin:6px 0}
+.card p{margin:0;color:var(--muted);font-size:13px}
+.serviceicon{height:48px;width:48px;display:grid;place-items:center;border-radius:14px;background:#123653;font-size:24px;margin-bottom:10px}
+.banner{margin-top:28px;padding:28px;text-align:center;border:1px solid #245075;border-radius:17px;background:linear-gradient(120deg,#102947,#102033)}
+.gallerytools{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:18px 0}
+.filter{border:1px solid var(--line);background:var(--panel);color:var(--txt);padding:7px 14px;border-radius:25px}
+.filter.active{background:#147db7;color:white}
+.project{padding:0;overflow:hidden}
+.project img{width:100%;height:165px;object-fit:cover;display:block;background:var(--panel2)}
+.project .info{padding:14px}
+.formcard{max-width:740px;margin:auto}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{margin-bottom:12px}
+.full{grid-column:1/-1}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+input,textarea,select{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--txt);outline:none}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--a)}
+.note{font-size:12px;color:var(--muted);margin-top:9px}
+.rowline{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.contactline{padding:13px;background:var(--panel);border-radius:11px;margin:10px 0}
+.tablewrap{overflow:auto}
+table{border-collapse:collapse;width:100%;min-width:600px}
+th,td{padding:10px;border-bottom:1px solid var(--line);text-align:start;font-size:13px}
+th{color:var(--b)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.status{padding:4px 8px;border-radius:20px;background:var(--panel2);font-size:12px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,100px);opacity:0;background:#16445a;color:white;padding:11px 18px;border-radius:11px;z-index:80;transition:.25s;max-width:92%;text-align:center}
+.toast.show{transform:translate(-50%,0);opacity:1}
+footer{border-top:1px solid var(--line);padding:25px 0;text-align:center;color:var(--muted);font-size:13px}
+.hidden{display:none!important}
+.no-motion *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html[dir="ltr"] body{text-align:left}
 @media(max-width:600px){.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.hero{padding:52px 0}.brand{font-size:15px}.page{padding-top:26px}}
 </style>
 </head>
 <body>
-<header><div class="wrap head"><button class="iconbtn" onclick="menuToggle()" aria-label="منو">☰</button><a class="brand" href="#" onclick="page('home');return false">PAMIR <span>DIGITAL STUDIO</span></a><button class="iconbtn" onclick="cycleLang()" id="langTop">دری</button></div></header>
+
+<header>
+<div class="wrap head">
+<button class="iconbtn" onclick="menuToggle()" aria-label="Menu">☰</button>
+<a class="brand" href="#" onclick="page('home');return false">PAMIR <span>DIGITAL STUDIO</span></a>
+<button class="iconbtn" onclick="cycleLang()" id="langTop">دری</button>
+</div>
+</header>
+
 <div class="overlay" id="overlay" onclick="menuToggle()"></div>
-<aside class="drawer" id="drawer"><div class="drawerhead"><b class="brand">PAMIR <span>STUDIO</span></b><button class="iconbtn" onclick="menuToggle()">×</button></div>
-<button class="nav active" data-page="home" onclick="page('home')"><i>⌂</i><span data-t="home">صفحه اصلی</span></button>
-<button class="nav" data-page="services" onclick="page('services')"><i>✧</i><span data-t="services">خدمات ما</span></button>
-<button class="nav" data-page="gallery" onclick="page('gallery')"><i>▦</i><span data-t="gallery">گالری نمونه‌کار</span></button>
-<button class="nav" data-page="order" onclick="page('order')"><i>＋</i><span data-t="order">ثبت سفارش</span></button>
-<button class="nav" data-page="about" onclick="page('about')"><i>ⓘ</i><span data-t="about">درباره ما</span></button>
-<button class="nav" data-page="contact" onclick="page('contact')"><i>☎</i><span data-t="contact">تماس با ما</span></button>
-<button class="nav" data-page="report" onclick="page('report')"><i>⚑</i><span data-t="report">گزارش مشکل</span></button>
-<button class="nav" data-page="settings" onclick="page('settings')"><i>⚙</i><span data-t="settings">تنظیمات</span></button>
-<button class="nav" data-page="admin" onclick="page('admin')"><i>♙</i><span>پنل مدیریت</span></button>
+
+<aside class="drawer" id="drawer">
+<div class="drawerhead">
+<b class="brand">PAMIR <span>STUDIO</span></b>
+<button class="iconbtn" onclick="menuToggle()">×</button>
+</div>
+<button class="nav active" data-page="home" onclick="page('home')"><i>⌂</i><span data-i18n="home">صفحه اصلی</span></button>
+<button class="nav" data-page="services" onclick="page('services')"><i>✧</i><span data-i18n="services">خدمات ما</span></button>
+<button class="nav" data-page="gallery" onclick="page('gallery')"><i>▦</i><span data-i18n="gallery">گالری نمونه‌کار</span></button>
+<button class="nav" data-page="order" onclick="page('order')"><i>＋</i><span data-i18n="order">ثبت سفارش</span></button>
+<button class="nav" data-page="about" onclick="page('about')"><i>ⓘ</i><span data-i18n="about">درباره ما</span></button>
+<button class="nav" data-page="contact" onclick="page('contact')"><i>☎</i><span data-i18n="contact">تماس با ما</span></button>
+<button class="nav" data-page="report" onclick="page('report')"><i>⚑</i><span data-i18n="report">گزارش مشکل</span></button>
+<button class="nav" data-page="settings" onclick="page('settings')"><i>⚙</i><span data-i18n="settings">تنظیمات</span></button>
+<button class="nav" data-page="admin" onclick="page('admin')"><i>♙</i><span data-i18n="admin">پنل مدیریت</span></button>
 </aside>
+
 <main>
-<section class="page active" id="home"><div class="hero"><div class="wrap"><span class="tag">YOUR DIGITAL FUTURE STARTS HERE</span><h1>از ایده تا <span class="gradient">دنیای دیجیتال</span></h1><p>به ایده‌های خود هویت دیجیتال ببخشید؛ طراحی حرفه‌ای، خلاقیت مدرن و راه‌حل‌های هوشمند برای رشد کسب‌وکار شما.</p><div class="actions"><button class="btn primary" onclick="page('order')">شروع یک پروژه ↗</button><button class="btn" onclick="page('gallery')">دیدن نمونه‌کارها</button></div></div></div><div class="wrap"><div class="sectionhead"><h2>خدمات تخصصی ما</h2><p>راه‌حل‌های دیجیتال برای توسعه برند شما</p></div><div class="grid">
-<div class="card"><div class="serviceicon">🌐</div><h3>طراحی وب‌سایت</h3><p>وب‌سایت‌های مدرن، واکنش‌گرا و حرفه‌ای.</p></div><div class="card"><div class="serviceicon">✦</div><h3>لوگو و برندینگ</h3><p>هویت بصری خاص و ماندگار برای برند شما.</p></div><div class="card"><div class="serviceicon">▧</div><h3>طراحی گرافیک</h3><p>پست، استوری و محتوای شبکه‌های اجتماعی.</p></div><div class="card"><div class="serviceicon">🤖</div><h3>هوش مصنوعی</h3><p>ایده‌پردازی و تولید محتوای خلاقانه.</p></div></div><div class="banner"><h2>آماده‌ای ایده‌ات را واقعی کنی؟</h2><p>پروژه بعدی‌ات را با ما شروع کن.</p><button class="btn primary" onclick="page('order')">ثبت سفارش</button></div></div></section>
-<section class="page" id="services"><div class="wrap"><div class="sectionhead"><h2>خدمات ما</h2><p>ترکیب خلاقیت، تکنولوژی و کیفیت</p></div><div class="grid">
-<div class="card"><div class="serviceicon">🌐</div><h3>طراحی وب‌سایت</h3><p>سایت شرکتی، شخصی و معرفی خدمات، سازگار با موبایل.</p></div><div class="card"><div class="serviceicon">🎨</div><h3>لوگو و برندینگ</h3><p>لوگوی اختصاصی، رنگ‌بندی و هویت بصری حرفه‌ای.</p></div><div class="card"><div class="serviceicon">📱</div><h3>شبکه‌های اجتماعی</h3><p>پست، استوری، بنر و قالب‌های هماهنگ.</p></div><div class="card"><div class="serviceicon">🛒</div><h3>فروشگاه آنلاین</h3><p>طراحی رابط فروشگاه و صفحات محصولات.</p></div><div class="card"><div class="serviceicon">🧩</div><h3>طراحی UI/UX</h3><p>تجربه کاربری ساده، زیبا و کاربردی.</p></div><div class="card"><div class="serviceicon">🤖</div><h3>هوش مصنوعی</h3><p>محتوای تصویری و ایده‌پردازی با ابزارهای هوشمند.</p></div></div></div></section>
-<section class="page" id="gallery"><div class="wrap"><div class="sectionhead"><h2>گالری نمونه‌کارها</h2><p>تصاویر نمایشی برای نمایش سبک طراحی</p></div><div class="gallerytools"><button class="filter active" onclick="filterGallery('all',this)">همه</button><button class="filter" onclick="filterGallery('web',this)">وب‌سایت</button><button class="filter" onclick="filterGallery('brand',this)">برندینگ</button><button class="filter" onclick="filterGallery('social',this)">گرافیک</button></div><div class="grid" id="galleryGrid">
-<div class="card project" data-kind="web"><img loading="lazy" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900&auto=format&fit=crop" alt="نمونه طراحی وب‌سایت"><div class="info"><small>WEB DESIGN</small><h3>طراحی وب‌سایت مدرن</h3></div></div>
-<div class="card project" data-kind="brand"><img loading="lazy" src="https://images.unsplash.com/photo-1634942536790-2534db4a2b2b?w=900&auto=format&fit=crop" alt="نمونه برندینگ"><div class="info"><small>BRANDING</small><h3>هویت بصری برند</h3></div></div>
-<div class="card project" data-kind="social"><img loading="lazy" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&auto=format&fit=crop" alt="نمونه طراحی شبکه اجتماعی"><div class="info"><small>SOCIAL MEDIA</small><h3>طراحی شبکه اجتماعی</h3></div></div>
-<div class="card project" data-kind="web"><img loading="lazy" src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&auto=format&fit=crop" alt="نمونه طراحی گرافیک"><div class="info"><small>CREATIVE DESIGN</small><h3>طراحی خلاقانه</h3></div></div></div><p class="note">این تصاویر نمونه‌های نمایشی هستند؛ نمونه‌کار واقعی مشتریان نیستند.</p></div></section>
-<section class="page" id="order"><div class="wrap"><div class="sectionhead"><h2>ثبت سفارش پروژه</h2><p>مشخصات پروژه را وارد کنید تا در پایگاه داده ثبت شود.</p></div><form class="card formcard" onsubmit="submitOrder(event)"><div class="formgrid"><div class="field"><label>نام شما</label><input id="oName" required></div><div class="field"><label>شماره تماس</label><input id="oPhone" required></div><div class="field"><label>ایمیل (اختیاری)</label><input id="oEmail" type="email"></div><div class="field"><label>نوع خدمات</label><select id="oService" required><option value="">انتخاب کنید</option><option>طراحی وب‌سایت</option><option>لوگو و برندینگ</option><option>طراحی گرافیک</option><option>فروشگاه آنلاین</option><option>UI/UX</option><option>هوش مصنوعی</option><option>سایر</option></select></div><div class="field"><label>بودجه تقریبی</label><input id="oBudget" placeholder="مثلاً توافقی"></div><div class="field full"><label>توضیحات پروژه</label><textarea id="oDescription" required></textarea></div></div><button class="btn primary">ارسال سفارش</button><p class="note">اگر اتصال دیتابیس برقرار نباشد، امکان ارسال از واتساپ نیز ارائه می‌شود.</p></form></div></section>
-<section class="page" id="about"><div class="wrap"><div class="sectionhead"><h2>درباره PAMIR</h2><p>از ایده تا دنیای دیجیتال</p></div><div class="card"><h2 class="gradient">PAMIR DIGITAL STUDIO</h2><p>پامیر یک استودیوی خدمات دیجیتال با تمرکز بر طراحی، خلاقیت و راه‌حل‌های مدرن است. هدف ما کمک به افراد و کسب‌وکارها برای حضور بهتر در دنیای دیجیتال است.</p><div class="grid" style="margin-top:18px"><div class="card"><h3>ماموریت ما</h3><p>تبدیل ایده‌ها به تجربه‌های دیجیتال جذاب.</p></div><div class="card"><h3>چشم‌انداز ما</h3><p>ارائه خدمات خلاقانه و باکیفیت.</p></div></div></div></div></section>
-<section class="page" id="contact"><div class="wrap"><div class="sectionhead"><h2>تماس با ما</h2><p>برای مشاوره و همکاری در ارتباط باشید.</p></div><div class="card formcard"><div class="contactline">📱 واتساپ: <b dir="ltr">+93767526658</b></div><div class="contactline">📍 کابل، افغانستان</div><div class="contactline">✉️ ایمیل: <b dir="ltr">hashimiadnan5@gmail.com</b></div><a class="btn primary" href="https://wa.me/93767526658" target="_blank" rel="noopener">گفتگو در واتساپ ↗</a></div></div></section>
-<section class="page" id="report"><div class="wrap"><div class="sectionhead"><h2>گزارش مشکل</h2><p>مشکل سایت را برای ما ارسال کنید.</p></div><form class="card formcard" onsubmit="submitReport(event)"><div class="field"><label>نام</label><input id="rName" required></div><div class="field"><label>ایمیل (اختیاری)</label><input id="rEmail" type="email"></div><div class="field"><label>موضوع</label><input id="rSubject" required></div><div class="field"><label>شرح مشکل</label><textarea id="rMessage" required></textarea></div><button class="btn primary">ارسال گزارش</button></form></div></section>
-<section class="page" id="settings"><div class="wrap"><div class="sectionhead"><h2>تنظیمات</h2><p>ظاهر، زبان و حرکت‌های سایت را مدیریت کنید.</p></div><div class="card formcard"><div class="rowline"><div><b>حالت روشن / تاریک</b><div class="note">تغییر رنگ‌بندی سایت</div></div><button class="btn" onclick="toggleTheme()">تغییر حالت ◐</button></div><div class="rowline"><div><b>زبان سایت</b><div class="note">دری، پشتو، انگلیسی</div></div><select id="langSelect" style="width:auto" onchange="setLang(this.value)"><option value="fa">دری</option><option value="ps">پښتو</option><option value="en">English</option></select></div><div class="rowline"><div><b>انیمیشن‌ها</b><div class="note">فعال یا غیرفعال کردن حرکت‌ها</div></div><button class="btn" id="motionBtn" onclick="toggleMotion()">روشن</button></div><div class="rowline"><div><b>پاک‌سازی تنظیمات محلی</b><div class="note">بازگشت تنظیمات ظاهری به حالت اول</div></div><button class="btn" onclick="resetSettings()">بازنشانی</button></div></div></div></section>
-<section class="page" id="admin"><div class="wrap"><div class="sectionhead"><h2>پنل مدیریت</h2><p>ورود امن مدیر و مدیریت سفارش‌ها و گزارش‌ها</p></div>
-<div class="card formcard" id="adminLogin"><div class="field"><label>ایمیل مدیر</label><input id="adminEmail" type="email" autocomplete="username" placeholder="ایمیل حساب مدیر"></div><div class="field"><label>رمز عبور</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور Supabase"></div><button class="btn primary" onclick="adminLogin()">ورود به پنل</button><p class="note">ورود از طریق Supabase Auth انجام می‌شود. رمز را در هیچ جای کد ننویسید.</p></div>
-<div class="hidden" id="adminPanel"><div class="card"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><b>داشبورد مدیریت</b><button class="btn" onclick="adminLogout()">خروج از حساب</button></div><p class="note" id="adminIdentity"></p><div class="tabs"><button class="btn" onclick="loadAdmin('orders')">سفارش‌ها</button><button class="btn" onclick="loadAdmin('reports')">گزارش‌ها</button><button class="btn" onclick="loadAdmin('overview')">آمار</button><button class="btn" onclick="loadAdmin('projects')">نمونه‌کارها</button></div><div id="adminContent"><p class="muted">یک بخش را انتخاب کنید.</p></div></div></div>
-</div></section>
+
+<section class="page active" id="home">
+<div class="hero">
+<div class="wrap">
+<span class="tag">YOUR DIGITAL FUTURE STARTS HERE</span>
+<h1 data-i18n="heroTitle">از ایده تا <span class="gradient">دنیای دیجیتال</span></h1>
+<p data-i18n="heroDesc">به ایده‌های خود هویت دیجیتال ببخشید؛ طراحی حرفه‌ای، خلاقیت مدرن و راه‌حل‌های هوشمند برای رشد کسب‌وکار شما.</p>
+<div class="actions">
+<button class="btn primary" onclick="page('order')" data-i18n="startProject">شروع یک پروژه ↗</button>
+<button class="btn" onclick="page('gallery')" data-i18n="viewWork">دیدن نمونه‌کارها</button>
+</div>
+</div>
+</div>
+<div class="wrap">
+<div class="sectionhead">
+<h2 data-i18n="specialServices">خدمات تخصصی ما</h2>
+<p data-i18n="brandSolutions">راه‌حل‌های دیجیتال برای توسعه برند شما</p>
+</div>
+<div class="grid">
+<div class="card"><div class="serviceicon">🌐</div><h3 data-i18n="webDesign">طراحی وب‌سایت</h3><p data-i18n="webShort">وب‌سایت‌های مدرن، واکنش‌گرا و حرفه‌ای.</p></div>
+<div class="card"><div class="serviceicon">✦</div><h3 data-i18n="branding">لوگو و برندینگ</h3><p data-i18n="brandShort">هویت بصری خاص و ماندگار برای برند شما.</p></div>
+<div class="card"><div class="serviceicon">▧</div><h3 data-i18n="graphic">طراحی گرافیک</h3><p data-i18n="graphicShort">پست، استوری و محتوای شبکه‌های اجتماعی.</p></div>
+<div class="card"><div class="serviceicon">🤖</div><h3 data-i18n="ai">هوش مصنوعی</h3><p data-i18n="aiShort">ایده‌پردازی و تولید محتوای خلاقانه.</p></div>
+</div>
+<div class="banner">
+<h2 data-i18n="readyTitle">آماده‌ای ایده‌ات را واقعی کنی؟</h2>
+<p data-i18n="readyDesc">پروژه بعدی‌ات را با ما شروع کن.</p>
+<button class="btn primary" onclick="page('order')" data-i18n="submitOrder">ثبت سفارش</button>
+</div>
+</div>
+</section>
+
+<section class="page" id="services">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="services">خدمات ما</h2><p data-i18n="serviceSubtitle">ترکیب خلاقیت، تکنولوژی و کیفیت</p></div>
+<div class="grid">
+<div class="card"><div class="serviceicon">🌐</div><h3 data-i18n="webDesign">طراحی وب‌سایت</h3><p data-i18n="webLong">سایت شرکتی، شخصی و معرفی خدمات، سازگار با موبایل.</p></div>
+<div class="card"><div class="serviceicon">🎨</div><h3 data-i18n="branding">لوگو و برندینگ</h3><p data-i18n="brandLong">لوگوی اختصاصی، رنگ‌بندی و هویت بصری حرفه‌ای.</p></div>
+<div class="card"><div class="serviceicon">📱</div><h3 data-i18n="social">شبکه‌های اجتماعی</h3><p data-i18n="socialLong">پست، استوری، بنر و قالب‌های هماهنگ.</p></div>
+<div class="card"><div class="serviceicon">🛒</div><h3 data-i18n="store">فروشگاه آنلاین</h3><p data-i18n="storeLong">طراحی رابط فروشگاه و صفحات محصولات.</p></div>
+<div class="card"><div class="serviceicon">🧩</div><h3 data-i18n="uiux">طراحی UI/UX</h3><p data-i18n="uiuxLong">تجربه کاربری ساده، زیبا و کاربردی.</p></div>
+<div class="card"><div class="serviceicon">🤖</div><h3 data-i18n="ai">هوش مصنوعی</h3><p data-i18n="aiLong">محتوای تصویری و ایده‌پردازی با ابزارهای هوشمند.</p></div>
+</div>
+</div>
+</section>
+
+<section class="page" id="gallery">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="galleryTitle">گالری نمونه‌کارها</h2><p data-i18n="gallerySubtitle">تصاویر نمایشی برای نمایش سبک طراحی</p></div>
+<div class="gallerytools">
+<button class="filter active" data-filter="all" onclick="filterGallery('all',this)" data-i18n="all">همه</button>
+<button class="filter" data-filter="web" onclick="filterGallery('web',this)" data-i18n="web">وب‌سایت</button>
+<button class="filter" data-filter="brand" onclick="filterGallery('brand',this)" data-i18n="branding">برندینگ</button>
+<button class="filter" data-filter="social" onclick="filterGallery('social',this)" data-i18n="graphic">گرافیک</button>
+</div>
+<div class="grid" id="galleryGrid">
+<div class="card project" data-kind="web">
+<img loading="lazy" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900&auto=format&fit=crop" alt="Website design">
+<div class="info"><small>WEB DESIGN</small><h3 data-i18n="projectWeb">طراحی وب‌سایت مدرن</h3></div>
+</div>
+<div class="card project" data-kind="brand">
+<img loading="lazy" src="https://images.unsplash.com/photo-1634942536790-2534db4a2b2b?w=900&auto=format&fit=crop" alt="Branding">
+<div class="info"><small>BRANDING</small><h3 data-i18n="projectBrand">هویت بصری برند</h3></div>
+</div>
+<div class="card project" data-kind="social">
+<img loading="lazy" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&auto=format&fit=crop" alt="Social media">
+<div class="info"><small>SOCIAL MEDIA</small><h3 data-i18n="projectSocial">طراحی شبکه اجتماعی</h3></div>
+</div>
+<div class="card project" data-kind="web">
+<img loading="lazy" src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&auto=format&fit=crop" alt="Creative design">
+<div class="info"><small>CREATIVE DESIGN</small><h3 data-i18n="projectCreative">طراحی خلاقانه</h3></div>
+</div>
+</div>
+<p class="note" data-i18n="galleryNote">این تصاویر نمونه‌های نمایشی هستند؛ نمونه‌کار واقعی مشتریان نیستند.</p>
+</div>
+</section>
+
+<section class="page" id="order">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="orderTitle">ثبت سفارش پروژه</h2><p data-i18n="orderSubtitle">مشخصات پروژه را وارد کنید تا در پایگاه داده ثبت شود.</p></div>
+<form class="card formcard" onsubmit="submitOrder(event)">
+<div class="formgrid">
+<div class="field"><label data-i18n="yourName">نام شما</label><input id="oName" required></div>
+<div class="field"><label data-i18n="phone">شماره تماس</label><input id="oPhone" required></div>
+<div class="field"><label data-i18n="emailOptional">ایمیل (اختیاری)</label><input id="oEmail" type="email"></div>
+<div class="field"><label data-i18n="serviceType">نوع خدمات</label>
+<select id="oService" required>
+<option value="" data-i18n="choose">انتخاب کنید</option>
+<option value="web" data-i18n="webDesign">طراحی وب‌سایت</option>
+<option value="branding" data-i18n="branding">لوگو و برندینگ</option>
+<option value="graphic" data-i18n="graphic">طراحی گرافیک</option>
+<option value="store" data-i18n="store">فروشگاه آنلاین</option>
+<option value="uiux">UI/UX</option>
+<option value="ai" data-i18n="ai">هوش مصنوعی</option>
+<option value="other" data-i18n="other">سایر</option>
+</select>
+</div>
+<div class="field"><label data-i18n="budget">بودجه تقریبی</label><input id="oBudget" data-i18n-placeholder="budgetPlaceholder" placeholder="مثلاً توافقی"></div>
+<div class="field full"><label data-i18n="projectDetails">توضیحات پروژه</label><textarea id="oDescription" required></textarea></div>
+</div>
+<button class="btn primary" data-i18n="sendOrder">ارسال سفارش</button>
+<p class="note" data-i18n="orderNote">اگر اتصال دیتابیس برقرار نباشد، امکان ارسال از واتساپ نیز ارائه می‌شود.</p>
+</form>
+</div>
+</section>
+
+<section class="page" id="about">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="aboutPamir">درباره PAMIR</h2><p data-i18n="fromIdea">از ایده تا دنیای دیجیتال</p></div>
+<div class="card">
+<h2 class="gradient">PAMIR DIGITAL STUDIO</h2>
+<p data-i18n="aboutText">پامیر یک استودیوی خدمات دیجیتال با تمرکز بر طراحی، خلاقیت و راه‌حل‌های مدرن است. هدف ما کمک به افراد و کسب‌وکارها برای حضور بهتر در دنیای دیجیتال است.</p>
+<div class="grid" style="margin-top:18px">
+<div class="card"><h3 data-i18n="mission">ماموریت ما</h3><p data-i18n="missionText">تبدیل ایده‌ها به تجربه‌های دیجیتال جذاب.</p></div>
+<div class="card"><h3 data-i18n="vision">چشم‌انداز ما</h3><p data-i18n="visionText">ارائه خدمات خلاقانه و باکیفیت.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="page" id="contact">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="contact">تماس با ما</h2><p data-i18n="contactSubtitle">برای مشاوره و همکاری در ارتباط باشید.</p></div>
+<div class="card formcard">
+<div class="contactline">📱 <span data-i18n="whatsapp">واتساپ</span>: <b dir="ltr">+93767526658</b></div>
+<div class="contactline">📍 <span data-i18n="location">کابل، افغانستان</span></div>
+<div class="contactline">✉️ <span data-i18n="email">ایمیل</span>: <b dir="ltr">hashimiadnan5@gmail.com</b></div>
+<a class="btn primary" href="https://wa.me/93767526658" target="_blank" rel="noopener" data-i18n="chatWhatsapp">گفتگو در واتساپ ↗</a>
+</div>
+</div>
+</section>
+
+<section class="page" id="report">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="report">گزارش مشکل</h2><p data-i18n="reportSubtitle">مشکل سایت را برای ما ارسال کنید.</p></div>
+<form class="card formcard" onsubmit="submitReport(event)">
+<div class="field"><label data-i18n="yourName">نام</label><input id="rName" required></div>
+<div class="field"><label data-i18n="emailOptional">ایمیل (اختیاری)</label><input id="rEmail" type="email"></div>
+<div class="field"><label data-i18n="subject">موضوع</label><input id="rSubject" required></div>
+<div class="field"><label data-i18n="problemDetails">شرح مشکل</label><textarea id="rMessage" required></textarea></div>
+<button class="btn primary" data-i18n="sendReport">ارسال گزارش</button>
+</form>
+</div>
+</section>
+
+<section class="page" id="settings">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="settings">تنظیمات</h2><p data-i18n="settingsSubtitle">ظاهر، زبان و حرکت‌های سایت را مدیریت کنید.</p></div>
+<div class="card formcard">
+<div class="rowline">
+<div><b data-i18n="theme">حالت روشن / تاریک</b><div class="note" data-i18n="themeNote">تغییر رنگ‌بندی سایت</div></div>
+<button class="btn" onclick="toggleTheme()" data-i18n="changeTheme">تغییر حالت ◐</button>
+</div>
+<div class="rowline">
+<div><b data-i18n="siteLanguage">زبان سایت</b><div class="note" data-i18n="languageNote">دری، پشتو، انگلیسی</div></div>
+<select id="langSelect" style="width:auto" onchange="setLang(this.value)">
+<option value="fa">دری</option><option value="ps">پښتو</option><option value="en">English</option>
+</select>
+</div>
+<div class="rowline">
+<div><b data-i18n="animations">انیمیشن‌ها</b><div class="note" data-i18n="animationsNote">فعال یا غیرفعال کردن حرکت‌ها</div></div>
+<button class="btn" id="motionBtn" onclick="toggleMotion()">روشن</button>
+</div>
+<div class="rowline">
+<div><b data-i18n="clearSettings">پاک‌سازی تنظیمات محلی</b><div class="note" data-i18n="clearNote">بازگشت تنظیمات ظاهری به حالت اول</div></div>
+<button class="btn" onclick="resetSettings()" data-i18n="reset">بازنشانی</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="page" id="admin">
+<div class="wrap">
+<div class="sectionhead"><h2 data-i18n="admin">پنل مدیریت</h2><p data-i18n="adminSubtitle">ورود امن مدیر و مدیریت سفارش‌ها و گزارش‌ها</p></div>
+<div class="card formcard" id="adminLogin">
+<div class="field"><label data-i18n="adminEmail">ایمیل مدیر</label><input id="adminEmail" type="email" autocomplete="username" data-i18n-placeholder="adminEmailPlaceholder" placeholder="ایمیل حساب مدیر"></div>
+<div class="field"><label data-i18n="password">رمز عبور</label><input id="adminPassword" type="password" autocomplete="current-password" data-i18n-placeholder="passwordPlaceholder" placeholder="رمز عبور Supabase"></div>
+<button class="btn primary" onclick="adminLogin()" data-i18n="login">ورود به پنل</button>
+<p class="note" data-i18n="adminNote">ورود از طریق Supabase Auth انجام می‌شود. رمز را در هیچ جای کد ننویسید.</p>
+</div>
+<div class="hidden" id="adminPanel">
+<div class="card">
+<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
+<b data-i18n="dashboard">داشبورد مدیریت</b>
+<button class="btn" onclick="adminLogout()" data-i18n="logout">خروج از حساب</button>
+</div>
+<p class="note" id="adminIdentity"></p>
+<div class="tabs">
+<button class="btn" onclick="loadAdmin('orders')" data-i18n="orders">سفارش‌ها</button>
+<button class="btn" onclick="loadAdmin('reports')" data-i18n="reports">گزارش‌ها</button>
+<button class="btn" onclick="loadAdmin('overview')" data-i18n="statistics">آمار</button>
+<button class="btn" onclick="loadAdmin('projects')" data-i18n="projects">نمونه‌کارها</button>
+</div>
+<div id="adminContent"><p class="muted" data-i18n="selectSection">یک بخش را انتخاب کنید.</p></div>
+</div>
+</div>
+</div>
+</section>
+
 </main>
-<footer><div class="wrap"><b class="gradient">PAMIR DIGITAL STUDIO</b><p>از ایده تا دنیای دیجیتال</p><p>© <span id="year"></span> تمام حقوق محفوظ است.</p></div></footer><div class="toast" id="toast"></div>
+
+<footer>
+<div class="wrap">
+<b class="gradient">PAMIR DIGITAL STUDIO</b>
+<p data-i18n="fromIdea">از ایده تا دنیای دیجیتال</p>
+<p>© <span id="year"></span> <span data-i18n="copyright">تمام حقوق محفوظ است.</span></p>
+</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-/* Supabase public client settings. Publishable key is intended for browser use.
-   Never place a service_role or secret key in this file. */
 const SUPABASE_URL="https://ltkupjiqwvjtoicjqfoi.supabase.co";
 const SUPABASE_ANON_KEY="sb_publishable_6RYvOGAC_-eU09uvo6IPHQ_BMCTJ3M2";
-let db=null,adminUser=null;
-try{if(window.supabase)db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY)}catch(e){console.error(e)}
+
+let db=null,adminUser=null,language='fa';
+try{
+ if(window.supabase) db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+}catch(e){console.error(e)}
+
 const $=id=>document.getElementById(id);
-function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3500)}
-function menuToggle(){$('drawer').classList.toggle('open');$('overlay').classList.toggle('show')}
-function page(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===id));$('drawer').classList.remove('open');$('overlay').classList.remove('show');window.scrollTo({top:0,behavior:'smooth'});if(id==='admin')checkSession()}
-function filterGallery(k,b){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.project').forEach(x=>x.style.display=k==='all'||x.dataset.kind===k?'':'none')}
-function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('pamir-theme',document.body.classList.contains('light')?'light':'dark')}
-function toggleMotion(){document.body.classList.toggle('no-motion');let on=!document.body.classList.contains('no-motion');localStorage.setItem('pamir-motion',on?'on':'off');$('motionBtn').textContent=on?'روشن':'خاموش'}
-function resetSettings(){localStorage.removeItem('pamir-theme');localStorage.removeItem('pamir-motion');localStorage.removeItem('pamir-language');document.body.classList.remove('light','no-motion');setLang('fa');$('motionBtn').textContent='روشن';toast('تنظیمات بازنشانی شد')}
-const dict={fa:{home:'صفحه اصلی',services:'خدمات ما',gallery:'گالری نمونه‌کار',order:'ثبت سفارش',about:'درباره ما',contact:'تماس با ما',report:'گزارش مشکل',settings:'تنظیمات'},ps:{home:'کورپاڼه',services:'زموږ خدمتونه',gallery:'د کارونو بېلګې',order:'د پروژې غوښتنه',about:'زموږ په اړه',contact:'اړیکه',report:'د ستونزې راپور',settings:'تنظیمات'},en:{home:'Home',services:'Services',gallery:'Portfolio',order:'Order Project',about:'About',contact:'Contact',report:'Report a Problem',settings:'Settings'}};
-let language='fa';function setLang(l){language=l;document.documentElement.lang=l;document.documentElement.dir=l==='en'?'ltr':'rtl';document.querySelectorAll('[data-t]').forEach(e=>e.textContent=dict[l][e.dataset.t]);$('langSelect').value=l;$('langTop').textContent=l==='fa'?'دری':l==='ps'?'پښتو':'EN';localStorage.setItem('pamir-language',l)}
-function cycleLang(){setLang(language==='fa'?'ps':language==='ps'?'en':'fa')}
-async function submitOrder(e){e.preventDefault();let data={customer_name:$('oName').value.trim(),phone:$('oPhone').value.trim(),email:$('oEmail').value.trim()||null,service:$('oService').value,description:$('oDescription').value.trim(),budget:$('oBudget').value.trim()||null,status:'new'};if(db){let{error}=await db.from('orders').insert(data);if(!error){toast('سفارش شما ثبت شد.');e.target.reset();return}console.error(error);toast('ثبت در دیتابیس ناموفق بود؛ پیام واتساپ باز می‌شود.')}else toast('اتصال دیتابیس موجود نیست؛ واتساپ باز می‌شود.');let msg=`سفارش جدید PAMIR\nنام: ${data.customer_name}\nتماس: ${data.phone}\nایمیل: ${data.email||'-'}\nخدمات: ${data.service}\nبودجه: ${data.budget||'-'}\nتوضیحات: ${data.description}`;window.open('https://wa.me/93767526658?text='+encodeURIComponent(msg),'_blank')}
-async function submitReport(e){e.preventDefault();let data={customer_name:$('rName').value.trim(),email:$('rEmail').value.trim()||null,subject:$('rSubject').value.trim(),message:$('rMessage').value.trim(),status:'new'};if(db){let{error}=await db.from('reports').insert(data);if(!error){toast('گزارش شما ثبت شد.');e.target.reset();return}console.error(error);toast('ثبت گزارش ناموفق بود؛ واتساپ باز می‌شود.')}else toast('اتصال دیتابیس موجود نیست؛ واتساپ باز می‌شود.');let msg=`گزارش مشکل PAMIR\nنام: ${data.customer_name}\nایمیل: ${data.email||'-'}\nموضوع: ${data.subject}\nشرح: ${data.message}`;window.open('https://wa.me/93767526658?text='+encodeURIComponent(msg),'_blank')}
-async function adminLogin(){if(!db){toast('کتابخانه Supabase بارگذاری نشده؛ اینترنت را بررسی کنید.');return}let email=$('adminEmail').value.trim(),password=$('adminPassword').value;if(!email||!password){toast('ایمیل و رمز عبور را وارد کنید.');return}let{data,error}=await db.auth.signInWithPassword({email,password});if(error){toast('ورود ناموفق: '+error.message);return}adminUser=data.user;await checkSession()}
-async function checkSession(){if(!db)return;let{data}=await db.auth.getSession();if(!data.session){$('adminLogin').classList.remove('hidden');$('adminPanel').classList.add('hidden');return}adminUser=data.session.user;let{data:profile,error}=await db.from('profiles').select('is_admin').eq('id',adminUser.id).single();if(error||!profile||profile.is_admin!==true){await db.auth.signOut();adminUser=null;$('adminLogin').classList.remove('hidden');$('adminPanel').classList.add('hidden');toast('این حساب دسترسی مدیر ندارد. مقدار is_admin را برای شناسه کاربر مدیر بررسی کنید.');return}$('adminLogin').classList.add('hidden');$('adminPanel').classList.remove('hidden');$('adminIdentity').textContent='وارد شده به‌عنوان: '+adminUser.email;loadAdmin('overview')}
-async function adminLogout(){if(db)await db.auth.signOut();adminUser=null;$('adminLogin').classList.remove('hidden');$('adminPanel').classList.add('hidden');toast('از پنل خارج شدید')}
-async function loadAdmin(kind){let box=$('adminContent');box.innerHTML='<p class="muted">در حال بارگذاری...</p>';if(!db){box.textContent='اتصال Supabase برقرار نیست.';return}
-if(kind==='overview'){let[o,r]=await Promise.all([db.from('orders').select('id',{count:'exact',head:true}),db.from('reports').select('id',{count:'exact',head:true})]);box.innerHTML=`<div class="grid"><div class="card"><h2>${o.count??'—'}</h2><p>مجموع سفارش‌ها</p></div><div class="card"><h2>${r.count??'—'}</h2><p>مجموع گزارش‌ها</p></div></div>`;if(o.error||r.error)box.innerHTML+='<p class="note">برای نمایش آمار، دسترسی خواندن مدیر در RLS لازم است.</p>';return}
-if(kind==='orders'||kind==='reports'){let table=kind,fields=kind==='orders'?'id,customer_name,phone,email,service,description,budget,status,created_at':'id,customer_name,email,subject,message,status,created_at';let{data,error}=await db.from(table).select(fields).order('created_at',{ascending:false}).limit(100);if(error){box.textContent='خطا در خواندن اطلاعات: '+error.message;return}if(!data.length){box.textContent='هنوز موردی ثبت نشده است.';return}let cols=kind==='orders'?['customer_name','phone','service','budget','description','status']:['customer_name','email','subject','message','status'];let labels={customer_name:'نام',phone:'تماس',email:'ایمیل',service:'خدمت',budget:'بودجه',description:'توضیحات',subject:'موضوع',message:'پیام',status:'وضعیت'};box.innerHTML='<div class="tablewrap"><table><thead><tr>'+cols.map(c=>'<th>'+labels[c]+'</th>').join('')+'<th>عملیات</th></tr></thead><tbody>'+data.map(row=>'<tr>'+cols.map(c=>'<td>'+(escapeHtml(row[c]??'—'))+'</td>').join('')+`<td><select onchange="updateStatus('${table}','${row.id}',this.value)"><option value="new" ${row.status==='new'?'selected':''}>جدید</option><option value="in_progress" ${row.status==='in_progress'?'selected':''}>در حال بررسی</option><option value="completed" ${row.status==='completed'?'selected':''}>تکمیل شد</option><option value="closed" ${row.status==='closed'?'selected':''}>بسته شد</option></select></td></tr>`).join('')+'</tbody></table></div>';return}
-if(kind==='projects'){box.innerHTML='<p>نمونه‌کارهای گالری در حال حاضر داخل فایل سایت تعریف شده‌اند. برای افزودن یا حذف آن‌ها باید تصاویر و اطلاعات نمونه‌کارها در کد تغییر کند.</p>';return}}
-async function updateStatus(table,id,status){let{error}=await db.from(table).update({status}).eq('id',id);toast(error?'تغییر وضعیت ناموفق بود: '+error.message:'وضعیت به‌روز شد.')}
-function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-$('year').textContent=new Date().getFullYear();if(localStorage.getItem('pamir-theme')==='light')document.body.classList.add('light');if(localStorage.getItem('pamir-motion')==='off'){document.body.classList.add('no-motion');$('motionBtn').textContent='خاموش'}setLang(localStorage.getItem('pamir-language')||'fa');if(db)db.auth.onAuthStateChange(()=>{if($('admin').classList.contains('active'))checkSession()});
-</script></body></html>
+
+const translations={
+fa:{
+home:"صفحه اصلی",services:"خدمات ما",gallery:"گالری نمونه‌کار",order:"ثبت سفارش",about:"درباره ما",contact:"تماس با ما",report:"گزارش مشکل",settings:"تنظیمات",admin:"پنل مدیریت",
+heroTitle:'از ایده تا <span class="gradient">دنیای دیجیتال</span>',heroDesc:"به ایده‌های خود هویت دیجیتال ببخشید؛ طراحی حرفه‌ای، خلاقیت مدرن و راه‌حل‌های هوشمند برای رشد کسب‌وکار شما.",startProject:"شروع یک پروژه ↗",viewWork:"دیدن نمونه‌کارها",
+specialServices:"خدمات تخصصی ما",brandSolutions:"راه‌حل‌های دیجیتال برای توسعه برند شما",webDesign:"طراحی وب‌سایت",webShort:"وب‌سایت‌های مدرن، واکنش‌گرا و حرفه‌ای.",branding:"لوگو و برندینگ",brandShort:"هویت بصری خاص و ماندگار برای برند شما.",graphic:"طراحی گرافیک",graphicShort:"پست، استوری و محتوای شبکه‌های اجتماعی.",ai:"هوش مصنوعی",aiShort:"ایده‌پردازی و تولید محتوای خلاقانه.",
+readyTitle:"آماده‌ای ایده‌ات را واقعی کنی؟",readyDesc:"پروژه بعدی‌ات را با ما شروع کن.",submitOrder:"ثبت سفارش",serviceSubtitle:"ترکیب خلاقیت، تکنولوژی و کیفیت",
+webLong:"سایت شرکتی، شخصی و معرفی خدمات، سازگار با موبایل.",brandLong:"لوگوی اختصاصی، رنگ‌بندی و هویت بصری حرفه‌ای.",social:"شبکه‌های اجتماعی",socialLong:"پست، استوری، بنر و قالب‌های هماهنگ.",store:"فروشگاه آنلاین",storeLong:"طراحی رابط فروشگاه و صفحات محصولات.",uiux:"طراحی UI/UX",uiuxLong:"تجربه کاربری ساده، زیبا و کاربردی.",aiLong:"محتوای تصویری و ایده‌پردازی با ابزارهای هوشمند.",
+galleryTitle:"گالری نمونه‌کارها",gallerySubtitle:"تصاویر نمایشی برای نمایش سبک طراحی",all:"همه",web:"وب‌سایت",projectWeb:"طراحی وب‌سایت مدرن",projectBrand:"هویت بصری برند",projectSocial:"طراحی شبکه اجتماعی",projectCreative:"طراحی خلاقانه",galleryNote:"این تصاویر نمونه‌های نمایشی هستند؛ نمونه‌کار واقعی مشتریان نیستند.",
+orderTitle:"ثبت سفارش پروژه",orderSubtitle:"مشخصات پروژه را وارد کنید تا در پایگاه داده ثبت شود.",yourName:"نام شما",phone:"شماره تماس",emailOptional:"ایمیل (اختیاری)",serviceType:"نوع خدمات",choose:"انتخاب کنید",budget:"بودجه تقریبی",budgetPlaceholder:"مثلاً توافقی",projectDetails:"توضیحات پروژه",sendOrder:"ارسال سفارش",orderNote:"اگر اتصال دیتابیس برقرار نباشد، امکان ارسال از واتساپ نیز ارائه می‌شود.",other:"سایر",
+aboutPamir:"درباره PAMIR",fromIdea:"از ایده تا دنیای دیجیتال",aboutText:"پامیر یک استودیوی خدمات دیجیتال با تمرکز بر طراحی، خلاقیت و راه‌حل‌های مدرن است. هدف ما کمک به افراد و کسب‌وکارها برای حضور بهتر در دنیای دیجیتال است.",mission:"ماموریت ما",missionText:"تبدیل ایده‌ها به تجربه‌های دیجیتال جذاب.",vision:"چشم‌انداز ما",visionText:"ارائه خدمات خلاقانه و باکیفیت.",
+contactSubtitle:"برای مشاوره و همکاری در ارتباط باشید.",whatsapp:"واتساپ",location:"کابل، افغانستان",email:"ایمیل",chatWhatsapp:"گفتگو در واتساپ ↗",reportSubtitle:"مشکل سایت را برای ما ارسال کنید.",subject:"موضوع",problemDetails:"شرح مشکل",sendReport:"ارسال گزارش",
+settingsSubtitle:"ظاهر، زبان و حرکت‌های سایت را مدیریت کنید.",theme:"حالت روشن / تاریک",themeNote:"تغییر رنگ‌بندی سایت",changeTheme:"تغییر حالت ◐",siteLanguage:"زبان سایت",languageNote:"دری، پشتو، انگلیسی",animations:"انیمیشن‌ها",animationsNote:"فعال یا غیرفعال کردن حرکت‌ها",on:"روشن",off:"خاموش",clearSettings:"پاک‌سازی تنظیمات محلی",clearNote:"بازگشت تنظیمات ظاهری به حالت اول",reset:"بازنشانی",
+adminSubtitle:"ورود امن مدیر و مدیریت سفارش‌ها و گزارش‌ها",adminEmail:"ایمیل مدیر",adminEmailPlaceholder:"ایمیل حساب مدیر",password:"رمز عبور",passwordPlaceholder:"رمز عبور Supabase",login:"ورود به پنل",adminNote:"ورود از طریق Supabase Auth انجام می‌شود. رمز را در هیچ جای کد ننویسید.",dashboard:"داشبورد مدیریت",logout:"خروج از حساب",orders:"سفارش‌ها",reports:"گزارش‌ها",statistics:"آمار",projects:"نمونه‌کارها",selectSection:"یک بخش را انتخاب کنید.",
+copyright:"تمام حقوق محفوظ است.",savedOrder:"سفارش شما ثبت شد.",savedReport:"گزارش شما ثبت شد.",dbFailed:"ثبت در دیتابیس ناموفق بود؛ پیام واتساپ باز می‌شود.",noDatabase:"اتصال دیتابیس موجود نیست؛ واتساپ باز می‌شود.",reportFailed:"ثبت گزارش ناموفق بود؛ واتساپ باز می‌شود.",supabaseMissing:"کتابخانه Supabase بارگذاری نشده؛ اینترنت را بررسی کنید.",enterCredentials:"ایمیل و رمز عبور را وارد کنید.",loginFailed:"ورود ناموفق: ",notAdmin:"این حساب دسترسی مدیر ندارد. مقدار is_admin را برای شناسه کاربر مدیر بررسی کنید.",signedOut:"از پنل خارج شدید.",loading:"در حال بارگذاری...",connectionError:"اتصال Supabase برقرار نیست.",readError:"خطا در خواندن اطلاعات: ",empty:"هنوز موردی ثبت نشده است.",name:"نام",phoneCol:"تماس",emailCol:"ایمیل",serviceCol:"خدمت",budgetCol:"بودجه",descriptionCol:"توضیحات",subjectCol:"موضوع",messageCol:"پیام",statusCol:"وضعیت",actions:"عملیات",new:"جدید",inProgress:"در حال بررسی",completed:"تکمیل شد",closed:"بسته شد",statusFailed:"تغییر وضعیت ناموفق بود: ",statusUpdated:"وضعیت به‌روز شد.",totalOrders:"مجموع سفارش‌ها",totalReports:"مجموع گزارش‌ها",statsNote:"برای نمایش آمار، دسترسی خواندن مدیر در RLS لازم است.",projectAdminNote:"نمونه‌کارهای گالری در حال حاضر داخل فایل سایت تعریف شده‌اند. برای افزودن یا حذف آن‌ها باید تصاویر و اطلاعات نمونه‌کارها در کد تغییر کند.",adminIdentity:"وارد شده به‌عنوان: ",resetDone:"تنظیمات بازنشانی شد.",themeLight:"روشن",themeDark:"تاریک"
+},
+ps:{
+home:"کورپاڼه",services:"زموږ خدمتونه",gallery:"د کارونو بېلګې",order:"د پروژې غوښتنه",about:"زموږ په اړه",contact:"اړیکه",report:"د ستونزې راپور",settings:"تنظیمات",admin:"د مدیریت پینل",
+heroTitle:'له یوې مفکورې تر <span class="gradient">ډیجیټل نړۍ</span>',heroDesc:"خپلو مفکورو ته ډیجیټل هویت ورکړئ؛ مسلکي ډیزاین، نوښت او هوښیارې لارې ستاسو د سوداګرۍ د ودې لپاره.",startProject:"پروژه پیل کړئ ↗",viewWork:"بېلګې وګورئ",
+specialServices:"زموږ ځانګړي خدمتونه",brandSolutions:"ستاسو د برانډ د پراختیا لپاره ډیجیټل حللارې",webDesign:"د وېب‌سایټ ډیزاین",webShort:"عصري، ځواب ویونکي او مسلکي وېب‌سایټونه.",branding:"لوګو او برانډینګ",brandShort:"ستاسو د برانډ لپاره ځانګړی او تلپاتې بصري هویت.",graphic:"ګرافیک ډیزاین",graphicShort:"د ټولنیزو شبکو پوسټونه، سټوري او منځپانګه.",ai:"مصنوعي ځیرکتیا",aiShort:"د نوښتګرو مفکورو او منځپانګې جوړول.",
+readyTitle:"چمتو یاست خپله مفکوره عملي کړئ؟",readyDesc:"خپله راتلونکې پروژه له موږ سره پیل کړئ.",submitOrder:"غوښتنه ثبت کړئ",serviceSubtitle:"د نوښت، ټکنالوژۍ او کیفیت ګډ ترکیب",
+webLong:"شرکتي، شخصي او د خدمتونو وېب‌سایټونه چې له موبایل سره برابر وي.",brandLong:"ځانګړی لوګو، رنګونه او مسلکي بصري هویت.",social:"ټولنیزې شبکې",socialLong:"پوسټونه، سټوري، بینرونه او همغږي قالبونه.",store:"انلاین پلورنځی",storeLong:"د پلورنځي او محصولاتو د پاڼو ډیزاین.",uiux:"د UI/UX ډیزاین",uiuxLong:"ساده، ښکلی او ګټور کاروونکي تجربه.",aiLong:"د هوښیارو وسایلو په مرسته انځوریزه منځپانګه او مفکورې.",
+galleryTitle:"د کارونو ګالري",gallerySubtitle:"د ډیزاین د سبک د ښودلو لپاره بېلګې",all:"ټول",web:"وېب‌سایټ",projectWeb:"عصري وېب‌سایټ ډیزاین",projectBrand:"د برانډ بصري هویت",projectSocial:"د ټولنیزو شبکو ډیزاین",projectCreative:"نوښتګر ډیزاین",galleryNote:"دا انځورونه یوازې بېلګې دي؛ د پېرودونکو واقعي کارونه نه دي.",
+orderTitle:"د پروژې غوښتنه ثبت کړئ",orderSubtitle:"د پروژې معلومات ولیکئ، ترڅو په ډیټابېس کې ثبت شي.",yourName:"ستاسو نوم",phone:"د اړیکې شمېره",emailOptional:"برېښنالیک (اختیاري)",serviceType:"د خدمت ډول",choose:"انتخاب وکړئ",budget:"اټکلي بودیجه",budgetPlaceholder:"لکه: د هوکړې له مخې",projectDetails:"د پروژې معلومات",sendOrder:"غوښتنه ولېږئ",orderNote:"که ډیټابېس وصل نه وي، د واټساپ له لارې د لېږلو امکان هم شته.",other:"نور",
+aboutPamir:"د PAMIR په اړه",fromIdea:"له مفکورې تر ډیجیټل نړۍ",aboutText:"پامیر د ډیجیټل خدمتونو یو سټوډیو دی چې پر ډیزاین، نوښت او عصري حللارو تمرکز کوي. زموږ موخه د خلکو او سوداګرۍ سره مرسته ده، ترڅو په ډیجیټل نړۍ کې ښه حضور ولري.",mission:"زموږ ماموریت",missionText:"مفکورې په زړه پورې ډیجیټل تجربو بدلول.",vision:"زموږ لیدلوری",visionText:"د نوښتګرو او باکیفیته خدمتونو وړاندې کول.",
+contactSubtitle:"د مشورې او همکارۍ لپاره له موږ سره اړیکه ونیسئ.",whatsapp:"واټساپ",location:"کابل، افغانستان",email:"برېښنالیک",chatWhatsapp:"په واټساپ خبرې وکړئ ↗",reportSubtitle:"د وېب‌سایټ ستونزه موږ ته راولېږئ.",subject:"موضوع",problemDetails:"د ستونزې تشریح",sendReport:"راپور ولېږئ",
+settingsSubtitle:"د وېب‌سایټ بڼه، ژبه او خوځښتونه تنظیم کړئ.",theme:"روښانه / تیاره بڼه",themeNote:"د وېب‌سایټ د رنګونو بدلول",changeTheme:"بڼه بدله کړئ ◐",siteLanguage:"د وېب‌سایټ ژبه",languageNote:"دري، پښتو، انګلیسي",animations:"انیمېشنونه",animationsNote:"د خوځښتونو فعالول یا بندول",on:"فعال",off:"بند",clearSettings:"ځايي تنظیمات پاکول",clearNote:"د بڼې تنظیمات بېرته لومړني حالت ته وړل",reset:"بیا تنظیمول",
+adminSubtitle:"د مدیر خوندي ننوتل او د غوښتنو او راپورونو اداره",adminEmail:"د مدیر برېښنالیک",adminEmailPlaceholder:"د مدیر د حساب برېښنالیک",password:"پټ نوم",passwordPlaceholder:"د Supabase پټ نوم",login:"پینل ته ننوتل",adminNote:"ننوتل د Supabase Auth له لارې ترسره کېږي. پټ نوم په کوډ کې مه لیکئ.",dashboard:"د مدیریت ډشبورډ",logout:"وتل",orders:"غوښتنې",reports:"راپورونه",statistics:"احصائیه",projects:"د کارونو بېلګې",selectSection:"یوه برخه وټاکئ.",
+copyright:"ټول حقونه خوندي دي.",savedOrder:"ستاسو غوښتنه ثبت شوه.",savedReport:"ستاسو راپور ثبت شو.",dbFailed:"په ډیټابېس کې ثبت ناکام شو؛ واټساپ پرانیستل کېږي.",noDatabase:"ډیټابېس سره اړیکه نشته؛ واټساپ پرانیستل کېږي.",reportFailed:"د راپور ثبت ناکام شو؛ واټساپ پرانیستل کېږي.",supabaseMissing:"د Supabase کتابتون نه دی پورته شوی؛ انټرنېټ وګورئ.",enterCredentials:"برېښنالیک او پټ نوم ولیکئ.",loginFailed:"ننوتل ناکام شول: ",notAdmin:"دا حساب د مدیر اجازه نه لري. د مدیر د کارن لپاره is_admin وګورئ.",signedOut:"له پینل څخه ووتلئ.",loading:"معلومات پورته کېږي...",connectionError:"له Supabase سره اړیکه نشته.",readError:"د معلوماتو لوستل ناکام شول: ",empty:"تر اوسه هېڅ شی نه دی ثبت شوی.",name:"نوم",phoneCol:"اړیکه",emailCol:"برېښنالیک",serviceCol:"خدمت",budgetCol:"بودیجه",descriptionCol:"تشریحات",subjectCol:"موضوع",messageCol:"پیغام",statusCol:"حالت",actions:"کړنې",new:"نوی",inProgress:"تر څېړنې لاندې",completed:"بشپړ شو",closed:"بند شو",statusFailed:"د حالت بدلول ناکام شول: ",statusUpdated:"حالت تازه شو.",totalOrders:"د ټولو غوښتنو شمېر",totalReports:"د ټولو راپورونو شمېر",statsNote:"د احصائیې لپاره په RLS کې د مدیر د لوستلو اجازه اړینه ده.",projectAdminNote:"د ګالري بېلګې اوس د وېب‌سایټ په فایل کې دي. د زیاتولو یا لرې کولو لپاره د کوډ انځورونه او معلومات بدل کړئ.",adminIdentity:"ننوتلی حساب: ",resetDone:"تنظیمات بېرته لومړني شول.",themeLight:"روښانه",themeDark:"تیاره"
+},
+en:{
+home:"Home",services:"Services",gallery:"Portfolio",order:"Order Project",about:"About",contact:"Contact",report:"Report a Problem",settings:"Settings",admin:"Admin Panel",
+heroTitle:'From Ideas to the <span class="gradient">Digital World</span>',heroDesc:"Give your ideas a digital identity with professional design, modern creativity, and smart solutions to grow your business.",startProject:"Start a Project ↗",viewWork:"View Portfolio",
+specialServices:"Our Specialized Services",brandSolutions:"Digital solutions to grow your brand",webDesign:"Website Design",webShort:"Modern, responsive, and professional websites.",branding:"Logo & Branding",brandShort:"A unique and lasting visual identity for your brand.",graphic:"Graphic Design",graphicShort:"Posts, stories, and social media content.",ai:"Artificial Intelligence",aiShort:"Creative ideas and content production.",
+readyTitle:"Ready to bring your idea to life?",readyDesc:"Start your next project with us.",submitOrder:"Place an Order",serviceSubtitle:"A combination of creativity, technology, and quality",
+webLong:"Business, personal, and service websites built for mobile devices.",brandLong:"Custom logos, color palettes, and professional visual identity.",social:"Social Media",socialLong:"Posts, stories, banners, and coordinated templates.",store:"Online Store",storeLong:"Store interface and product page design.",uiux:"UI/UX Design",uiuxLong:"A simple, beautiful, and practical user experience.",aiLong:"Visual content and ideas powered by intelligent tools.",
+galleryTitle:"Our Portfolio",gallerySubtitle:"Visual examples showcasing our design style",all:"All",web:"Website",projectWeb:"Modern Website Design",projectBrand:"Brand Visual Identity",projectSocial:"Social Media Design",projectCreative:"Creative Design",galleryNote:"These are demonstration images, not actual client projects.",
+orderTitle:"Place a Project Order",orderSubtitle:"Enter your project details to save them in the database.",yourName:"Your Name",phone:"Phone Number",emailOptional:"Email (Optional)",serviceType:"Service Type",choose:"Choose an option",budget:"Estimated Budget",budgetPlaceholder:"e.g. Negotiable",projectDetails:"Project Details",sendOrder:"Submit Order",orderNote:"If the database connection is unavailable, you can also send your request through WhatsApp.",other:"Other",
+aboutPamir:"About PAMIR",fromIdea:"From Ideas to the Digital World",aboutText:"PAMIR is a digital services studio focused on design, creativity, and modern solutions. Our goal is to help individuals and businesses build a stronger presence in the digital world.",mission:"Our Mission",missionText:"Turning ideas into engaging digital experiences.",vision:"Our Vision",visionText:"Delivering creative, high-quality services.",
+contactSubtitle:"Get in touch for consultation and collaboration.",whatsapp:"WhatsApp",location:"Kabul, Afghanistan",email:"Email",chatWhatsapp:"Chat on WhatsApp ↗",reportSubtitle:"Send us a report about a website issue.",subject:"Subject",problemDetails:"Describe the Problem",sendReport:"Send Report",
+settingsSubtitle:"Manage the website appearance, language, and animations.",theme:"Light / Dark Mode",themeNote:"Change the website color theme",changeTheme:"Change Theme ◐",siteLanguage:"Website Language",languageNote:"Dari, Pashto, English",animations:"Animations",animationsNote:"Enable or disable animations",on:"On",off:"Off",clearSettings:"Clear Local Settings",clearNote:"Restore appearance settings to default",reset:"Reset",
+adminSubtitle:"Secure administrator login and management of orders and reports",adminEmail:"Admin Email",adminEmailPlaceholder:"Administrator account email",password:"Password",passwordPlaceholder:"Supabase password",login:"Log In",adminNote:"Login is handled through Supabase Auth. Never write your password in the code.",dashboard:"Admin Dashboard",logout:"Log Out",orders:"Orders",reports:"Reports",statistics:"Statistics",projects:"Portfolio Items",selectSection:"Select a section.",
+copyright:"All rights reserved.",savedOrder:"Your order has been submitted.",savedReport:"Your report has been submitted.",dbFailed:"Database submission failed; WhatsApp will open.",noDatabase:"Database connection unavailable; WhatsApp will open.",reportFailed:"Report submission failed; WhatsApp will open.",supabaseMissing:"Supabase library did not load. Please check your internet connection.",enterCredentials:"Enter your email and password.",loginFailed:"Login failed: ",notAdmin:"This account does not have administrator access. Check is_admin for the administrator user.",signedOut:"You have been logged out.",loading:"Loading...",connectionError:"Supabase connection unavailable.",readError:"Error reading data: ",empty:"No entries have been submitted yet.",name:"Name",phoneCol:"Phone",emailCol:"Email",serviceCol:"Service",budgetCol:"Budget",descriptionCol:"Description",subjectCol:"Subject",messageCol:"Message",statusCol:"Status",actions:"Actions",new:"New",inProgress:"In Progress",completed:"Completed",closed:"Closed",statusFailed:"Could not update status: ",statusUpdated:"Status updated.",totalOrders:"Total Orders",totalReports:"Total Reports",statsNote:"Admin read access in RLS is required to display statistics.",projectAdminNote:"Portfolio examples are currently stored in the website file. To add or remove them, update the images and project information in the code.",adminIdentity:"Signed in as: ",resetDone:"Settings have been reset.",themeLight:"Light",themeDark:"Dark"
+}
+};
+
+function t(key){return translations[language]?.[key]??translations.fa[key]??key}
+
+function applyTranslations(){
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+  const key=el.dataset.i18n;
+  if(translations[language][key]!==undefined)el.innerHTML=translations[language][key];
+ });
+ document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+  const key=el.dataset.i18nPlaceholder;
+  if(translations[language][key]!==undefined)el.placeholder=translations[language][key];
+ });
+ document.documentElement.lang=language;
+ document.documentElement.dir=language==="en"?"ltr":"rtl";
+ $("langSelect").value=language;
+ $("langTop").textContent=language==="fa"?"دری":language==="ps"?"پښتو":"EN";
+ $("motionBtn").textContent=document.body.classList.contains("no-motion")?t("off"):t("on");
+}
+
+function setLang(l){
+ if(!translations[l])l="fa";
+ language=l;
+ localStorage.setItem("pamir-language",l);
+ applyTranslations();
+ if($("adminPanel")&&!$("adminPanel").classList.contains("hidden")&&$("adminContent").dataset.kind){
+  loadAdmin($("adminContent").dataset.kind);
+ }
+}
+
+function cycleLang(){
+ setLang(language==="fa"?"ps":language==="ps"?"en":"fa");
+}
+
+function toast(message){
+ $("toast").textContent=message;
+ $("toast").classList.add("show");
+ clearTimeout(window.toastTimer);
+ window.toastTimer=setTimeout(()=>$("toast").classList.remove("show"),3500);
+}
+
+function menuToggle(){
+ $("drawer").classList.toggle("open");
+ $("overlay").classList.toggle("show");
+}
+
+function page(id){
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+ $(id).classList.add("active");
+ document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("active",x.dataset.page===id));
+ $("drawer").classList.remove("open");
+ $("overlay").classList.remove("show");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(id==="admin")checkSession();
+}
+
+function filterGallery(k,b){
+ document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+ b.classList.add("active");
+ document.querySelectorAll(".project").forEach(x=>{
+  x.style.display=k==="all"||x.dataset.kind===k?"":"none";
+ });
+}
+
+function toggleTheme(){
+ document.body.classList.toggle("light");
+ localStorage.setItem("pamir-theme",document.body.classList.contains("light")?"light":"dark");
+}
+
+function toggleMotion(){
+ document.body.classList.toggle("no-motion");
+ const on=!document.body.classList.contains("no-motion");
+ localStorage.setItem("pamir-motion",on?"on":"off");
+ $("motionBtn").textContent=on?t("on"):t("off");
+}
+
+function resetSettings(){
+ localStorage.removeItem("pamir-theme");
+ localStorage.removeItem("pamir-motion");
+ localStorage.removeItem("pamir-language");
+ document.body.classList.remove("light","no-motion");
+ setLang("fa");
+ toast(t("resetDone"));
+}
+
+const serviceNames={
+ web:{fa:"طراحی وب‌سایت",ps:"د وېب‌سایټ ډیزاین",en:"Website Design"},
+ branding:{fa:"لوگو و برندینگ",ps:"لوګو او برانډینګ",en:"Logo & Branding"},
+ graphic:{fa:"طراحی گرافیک",ps:"ګرافیک ډیزاین",en:"Graphic Design"},
+ store:{fa:"فروشگاه آنلاین",ps:"انلاین پلورنځی",en:"Online Store"},
+ uiux:{fa:"UI/UX",ps:"UI/UX",en:"UI/UX"},
+ ai:{fa:"هوش مصنوعی",ps:"مصنوعي ځیرکتیا",en:"Artificial Intelligence"},
+ other:{fa:"سایر",ps:"نور",en:"Other"}
+};
+
+async function submitOrder(e){
+ e.preventDefault();
+ const serviceKey=$("oService").value;
+ const service=serviceNames[serviceKey]?.[language]||serviceKey;
+ const data={
+  customer_name:$("oName").value.trim(),
+  phone:$("oPhone").value.trim(),
+  email:$("oEmail").value.trim()||null,
+  service:service,
+  description:$("oDescription").value.trim(),
+  budget:$("oBudget").value.trim()||null,
+  status:"new"
+ };
+ if(db){
+  const {error}=await db.from("orders").insert(data);
+  if(!error){
+   toast(t("savedOrder"));
+   e.target.reset();
+   return;
+  }
+  console.error(error);
+  toast(t("dbFailed"));
+ }else toast(t("noDatabase"));
+ const msg=`PAMIR DIGITAL STUDIO\nName: ${data.customer_name}\nPhone: ${data.phone}\nEmail: ${data.email||"-"}\nService: ${service}\nBudget: ${data.budget||"-"}\nDetails: ${data.description}`;
+ window.open("https://wa.me/93767526658?text="+encodeURIComponent(msg),"_blank");
+}
+
+async function submitReport(e){
+ e.preventDefault();
+ const data={
+  customer_name:$("rName").value.trim(),
+  email:$("rEmail").value.trim()||null,
+  subject:$("rSubject").value.trim(),
+  message:$("rMessage").value.trim(),
+  status:"new"
+ };
+ if(db){
+  const {error}=await db.from("reports").insert(data);
+  if(!error){
+   toast(t("savedReport"));
+   e.target.reset();
+   return;
+  }
+  console.error(error);
+  toast(t("reportFailed"));
+ }else toast(t("noDatabase"));
+ const msg=`PAMIR DIGITAL STUDIO - Report\nName: ${data.customer_name}\nEmail: ${data.email||"-"}\nSubject: ${data.subject}\nDetails: ${data.message}`;
+ window.open("https://wa.me/93767526658?text="+encodeURIComponent(msg),"_blank");
+}
+
+async function adminLogin(){
+ if(!db){toast(t("supabaseMissing"));return}
+ const email=$("adminEmail").value.trim();
+ const password=$("adminPassword").value;
+ if(!email||!password){toast(t("enterCredentials"));return}
+ const {data,error}=await db.auth.signInWithPassword({email,password});
+ if(error){toast(t("loginFailed")+error.message);return}
+ adminUser=data.user;
+ await checkSession();
+}
+
+async function checkSession(){
+ if(!db)return;
+ const {data}=await db.auth.getSession();
+ if(!data.session){
+  $("adminLogin").classList.remove("hidden");
+  $("adminPanel").classList.add("hidden");
+  return;
+ }
+ adminUser=data.session.user;
+ const {data:profile,error}=await db.from("profiles").select("is_admin").eq("id",adminUser.id).single();
+ if(error||!profile||profile.is_admin!==true){
+  await db.auth.signOut();
+  adminUser=null;
+  $("adminLogin").classList.remove("hidden");
+  $("adminPanel").classList.add("hidden");
+  toast(t("notAdmin"));
+  return;
+ }
+ $("adminLogin").classList.add("hidden");
+ $("adminPanel").classList.remove("hidden");
+ $("adminIdentity").textContent=t("adminIdentity")+adminUser.email;
+ loadAdmin("overview");
+}
+
+async function adminLogout(){
+ if(db)await db.auth.signOut();
+ adminUser=null;
+ $("adminLogin").classList.remove("hidden");
+ $("adminPanel").classList.add("hidden");
+ toast(t("signedOut"));
+}
+
+function escapeHtml(v){
+ return String(v).replace(/[&<>"']/g,c=>({
+ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
+}
+
+async function loadAdmin(kind){
+ const box=$("adminContent");
+ box.dataset.kind=kind;
+ box.innerHTML='<p class="muted">'+t("loading")+'</p>';
+ if(!db){box.textContent=t("connectionError");return}
+
+ if(kind==="overview"){
+  const [o,r]=await Promise.all([
+   db.from("orders").select("id",{count:"exact",head:true}),
+   db.from("reports").select("id",{count:"exact",head:true})
+  ]);
+  box.innerHTML=`
+   <div class="grid">
+    <div class="card"><h2>${o.count??"—"}</h2><p>${t("totalOrders")}</p></div>
+    <div class="card"><h2>${r.count??"—"}</h2><p>${t("totalReports")}</p></div>
+   </div>`;
+  if(o.error||r.error)box.innerHTML+='<p class="note">'+t("statsNote")+'</p>';
+  return;
+ }
+
+ if(kind==="orders"||kind==="reports"){
+  const table=kind;
+  const fields=kind==="orders"
+   ?"id,customer_name,phone,email,service,description,budget,status,created_at"
+   :"id,customer_name,email,subject,message,status,created_at";
+  const {data,error}=await db.from(table).select(fields).order("created_at",{ascending:false}).limit(100);
+  if(error){box.textContent=t("readError")+error.message;return}
+  if(!data.length){box.textContent=t("empty");return}
+
+  const cols=kind==="orders"
+   ?["customer_name","phone","service","budget","description","status"]
+   :["customer_name","email","subject","message","status"];
+
+  const labels={
+   customer_name:t("name"),phone:t("phoneCol"),email:t("emailCol"),
+   service:t("serviceCol"),budget:t("budgetCol"),description:t("descriptionCol"),
+   subject:t("subjectCol"),message:t("messageCol"),status:t("statusCol")
+  };
+
+  box.innerHTML='<div class="tablewrap"><table><thead><tr>'+
+   cols.map(c=>"<th>"+labels[c]+"</th>").join("")+
+   "<th>"+t("actions")+"</th></tr></thead><tbody>"+
+   data.map(row=>"<tr>"+
+    cols.map(c=>"<td>"+escapeHtml(row[c]??"—")+"</td>").join("")+
+    `<td><select onchange="updateStatus('${table}','${row.id}',this.value)">
+     <option value="new" ${row.status==="new"?"selected":""}>${t("new")}</option>
+     <option value="in_progress" ${row.status==="in_progress"?"selected":""}>${t("inProgress")}</option>
+     <option value="completed" ${row.status==="completed"?"selected":""}>${t("completed")}</option>
+     <option value="closed" ${row.status==="closed"?"selected":""}>${t("closed")}</option>
+    </select></td></tr>`).join("")+
+   "</tbody></table></div>";
+  return;
+ }
+
+ if(kind==="projects"){
+  box.textContent=t("projectAdminNote");
+  return;
+ }
+}
+
+async function updateStatus(table,id,status){
+ const {error}=await db.from(table).update({status}).eq("id",id);
+ toast(error?t("statusFailed")+error.message:t("statusUpdated"));
+}
+
+$("year").textContent=new Date().getFullYear();
+
+if(localStorage.getItem("pamir-theme")==="light")document.body.classList.add("light");
+
+if(localStorage.getItem("pamir-motion")==="off")document.body.classList.add("no-motion");
+
+setLang(localStorage.getItem("pamir-language")||"fa");
+
+if(db){
+ db.auth.onAuthStateChange(()=>{
+  if($("admin").classList.contains("active"))checkSession();
+ });
+}
+</script>
+</body>
+</html>
