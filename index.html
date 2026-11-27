@@ -4,212 +4,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07111f">
-<meta name="description" content="PAMIR DIGITAL STUDIO - طراحی وب‌سایت، لوگو، برندینگ و خدمات دیجیتال">
+<meta name="theme-color" content="#070b16">
 <title>PAMIR DIGITAL STUDIO | از ایده تا دنیای دیجیتال</title>
+<meta name="description" content="PAMIR DIGITAL STUDIO - طراحی وب‌سایت، لوگو، برندینگ و خدمات دیجیتال در افغانستان">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
 :root{
- --bg:#07111f;--panel:#101e31;--blue:#20cfff;
- --white:#f5f8ff;--muted:#a9b8ca;--line:#203650;
+--bg:#070b16;
+--panel:#101a2b;
+--blue:#16c8ed;
+--blue2:#087bdb;
+--white:#f5f8ff;
+--muted:#9aaac1;
+--border:rgba(255,255,255,.09);
 }
-/* PAMIR ADVANCED PORTFOLIO */
-.portfolio-filters{
- display:flex;justify-content:center;gap:10px;
- flex-wrap:wrap;margin:25px 0 30px;
-}
-.portfolio-filters button{
- background:#101e31;color:#fff;
- border:1px solid #203650;border-radius:25px;
- padding:9px 18px;cursor:pointer;
-}
-.portfolio-filters button.active,
-.portfolio-filters button:hover{
- background:#20cfff;color:#07111f;
-}
-.portfolio-gallery{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
- gap:20px;
-}
-.gallery-item{
- background:#101e31;border:1px solid #203650;
- border-radius:16px;overflow:hidden;
- transition:.3s;
-}
-.gallery-item:hover{transform:translateY(-6px)}
-.gallery-item img{
- width:100%;height:210px;object-fit:cover;
- display:block;cursor:pointer;
-}
-.gallery-info{padding:17px}
-.gallery-info h3{margin-bottom:5px}
-.gallery-info p{color:#a9b8ca;font-size:13px}
-.gallery-actions{
- display:flex;gap:8px;margin-top:13px;flex-wrap:wrap;
-}
-.gallery-actions button,.gallery-actions a{
- border:0;border-radius:8px;padding:9px 12px;
- font-size:12px;font-weight:bold;cursor:pointer;
-}
-.gallery-view{background:#20cfff;color:#07111f}
-.gallery-order{background:#20c86b;color:#052313}
-.gallery-item.hidden{display:none}
-#pamirLightbox{
- display:none;position:fixed;inset:0;z-index:9999;
- background:#000e;align-items:center;
- justify-content:center;padding:20px;
-}
-#pamirLightbox.open{display:flex}
-.lightbox-content{
- width:min(850px,100%);background:#101e31;
- border:1px solid #203650;border-radius:16px;
- padding:15px;text-align:center;
-}
-.lightbox-content img{
- max-width:100%;max-height:65vh;
- object-fit:contain;border-radius:10px;
-}
-.lightbox-content h3{margin:12px}
-.lightbox-close{
- float:left;background:#24364d;color:white;
- border:0;border-radius:8px;padding:7px 12px;
- cursor:pointer;
-}
- 
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
- background:var(--bg);color:var(--white);
- font-family:Tahoma,Arial,sans-serif;line-height:1.8;
+font-family:'Vazirmatn',sans-serif;
+background:var(--bg);
+color:var(--white);
+line-height:1.8;
 }
 a{text-decoration:none;color:inherit}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-.container{width:min(1120px,92%);margin:auto}
+button,input,select,textarea{font:inherit}
+.container{width:min(1150px,92%);margin:auto}
 header{
- position:sticky;top:0;z-index:100;
- background:#07111fee;backdrop-filter:blur(14px);
- border-bottom:1px solid var(--line);
+position:sticky;top:0;z-index:100;
+background:rgba(7,11,22,.92);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--border);
 }
 .nav{
- min-height:76px;display:flex;align-items:center;
- justify-content:space-between;gap:15px;flex-wrap:wrap;
+min-height:76px;display:flex;align-items:center;
+justify-content:space-between;gap:15px;
 }
 .logo{font-size:23px;font-weight:900;letter-spacing:1px}
 .logo span{color:var(--blue)}
-nav{display:flex;gap:19px;align-items:center;flex-wrap:wrap}
-nav a{font-size:13px;color:var(--muted)}
+nav{display:flex;align-items:center;gap:24px}
+nav a{font-size:13px;color:#d0d9e9;transition:.3s}
 nav a:hover{color:var(--blue)}
+.nav-actions{display:flex;align-items:center;gap:10px}
 .lang{
- background:var(--panel);color:white;border:1px solid var(--line);
- padding:9px 12px;border-radius:9px;
+background:var(--panel);color:white;border:1px solid var(--border);
+border-radius:9px;padding:8px;
 }
+.menu-btn{display:none;background:none;color:white;border:0;font-size:25px}
 .hero{
- min-height:590px;display:flex;align-items:center;
- background:
- radial-gradient(ellipse at 80% 20%,#087ba533,transparent 40%),
- radial-gradient(ellipse at 10% 80%,#1557a333,transparent 40%);
+min-height:620px;display:flex;align-items:center;
+position:relative;overflow:hidden;
+background:
+radial-gradient(ellipse at 80% 35%,rgba(0,160,255,.16),transparent 45%),
+radial-gradient(ellipse at 10% 80%,rgba(0,220,255,.08),transparent 40%);
 }
-.hero-content{max-width:750px;padding:85px 0}
+.hero-content{max-width:760px;padding:90px 0}
 .tag{
- display:inline-block;color:var(--blue);
- border:1px solid #20cfff55;background:#20cfff12;
- border-radius:30px;padding:6px 15px;font-size:13px;
+display:inline-block;border:1px solid rgba(22,200,237,.35);
+color:var(--blue);padding:6px 15px;border-radius:30px;
+font-size:13px;margin-bottom:22px;
 }
-h1{font-size:clamp(38px,7vw,70px);line-height:1.25;margin:22px 0}
-h1 span,.blue{color:var(--blue)}
-.hero p{color:var(--muted);font-size:17px;max-width:620px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero h1{font-size:clamp(37px,7vw,68px);line-height:1.3;font-weight:900}
+.hero h1 span{color:var(--blue)}
+.hero p{color:var(--muted);font-size:17px;margin:22px 0;max-width:620px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .btn{
- display:inline-block;border:0;border-radius:10px;
- padding:12px 22px;font-weight:bold;transition:.2s;
+display:inline-flex;align-items:center;justify-content:center;
+padding:12px 24px;border-radius:10px;font-weight:700;
+border:1px solid var(--border);cursor:pointer;transition:.3s;
 }
-.primary{background:var(--blue);color:#04121e}
-.secondary{border:1px solid var(--line);color:white;background:transparent}
-.btn:hover{transform:translateY(-3px);filter:brightness(1.1)}
-section{padding:85px 0;scroll-margin-top:85px}
-.section-title{text-align:center;margin-bottom:38px}
-.section-title h2{font-size:32px;margin-bottom:8px}
-.section-title p{color:var(--muted)}
-.grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:18px;
+.primary{background:linear-gradient(120deg,var(--blue2),var(--blue));color:#03101b;border:0}
+.secondary{background:rgba(255,255,255,.04);color:white}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.stats{
+display:flex;gap:40px;flex-wrap:wrap;margin-top:50px;
 }
-.card{
- background:linear-gradient(145deg,#12243a,#0c192a);
- border:1px solid var(--line);border-radius:17px;
- padding:25px;transition:.25s;
+.stat strong{display:block;color:var(--blue);font-size:25px}
+.stat small{color:var(--muted)}
+section{padding:85px 0}
+.section-head{text-align:center;margin-bottom:42px}
+.section-head .mini{color:var(--blue);font-size:13px;font-weight:700}
+.section-head h2{font-size:clamp(27px,4vw,39px);margin:8px 0}
+.section-head p{color:var(--muted);max-width:600px;margin:auto;font-size:14px}
+.services-grid,.portfolio-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
-.card:hover{transform:translateY(-5px);border-color:var(--blue)}
-.card .symbol{font-size:30px;margin-bottom:12px}
-.card h3{font-size:19px;margin-bottom:9px}
-.card p{color:var(--muted);font-size:14px}
-.portfolio-card{
- min-height:190px;border-radius:16px;overflow:hidden;
- display:flex;flex-direction:column;justify-content:end;
- padding:22px;border:1px solid var(--line);
- background:linear-gradient(145deg,#143e62,#101b31 65%,#07111f);
+.service{
+background:linear-gradient(145deg,#111d30,#0b1220);
+border:1px solid var(--border);padding:28px;border-radius:17px;
+transition:.3s;
 }
-.portfolio-card:nth-child(2){background:linear-gradient(145deg,#49351b,#171b2d)}
-.portfolio-card:nth-child(3){background:linear-gradient(145deg,#173e42,#101b31)}
-.portfolio-card:nth-child(4){background:linear-gradient(145deg,#42264e,#101b31)}
-.portfolio-card small{color:var(--blue)}
-.portfolio-card h3{font-size:21px}
-.portfolio-card p{font-size:13px;color:#d0d9e6}
-.about-box{
- background:var(--panel);border:1px solid var(--line);
- border-radius:20px;padding:35px;
+.service:hover{transform:translateY(-6px);border-color:var(--blue)}
+.service-icon{font-size:34px;margin-bottom:12px}
+.service h3{font-size:19px;margin-bottom:8px}
+.service p{font-size:13px;color:var(--muted)}
+#portfolio{background:#0a1020}
+.filters{
+display:flex;justify-content:center;gap:10px;
+flex-wrap:wrap;margin-bottom:30px;
 }
-.about-box p{color:var(--muted);margin-top:12px}
-.steps{counter-reset:step}
-.step{position:relative}
-.step:before{
- counter-increment:step;content:counter(step);
- display:grid;place-items:center;width:38px;height:38px;
- border-radius:50%;background:var(--blue);color:#07111f;
- font-weight:bold;margin-bottom:15px;
+.filter{
+padding:8px 18px;border-radius:25px;
+background:#111b2c;color:#cbd5e1;
+border:1px solid var(--border);cursor:pointer;font-size:13px;
 }
-.faq{max-width:800px;margin:auto}
-details{
- background:var(--panel);border:1px solid var(--line);
- padding:17px 20px;border-radius:12px;margin-bottom:12px;
+.filter.active,.filter:hover{background:var(--blue);color:#04111c}
+.work{
+overflow:hidden;border-radius:15px;background:#111b2c;
+border:1px solid var(--border);transition:.3s;
 }
-summary{cursor:pointer;font-weight:bold}
-details p{color:var(--muted);padding-top:12px}
-.contact-layout{
- display:grid;grid-template-columns:1fr 1fr;gap:25px;
+.work:hover{transform:translateY(-5px);border-color:var(--blue)}
+.work img{width:100%;height:225px;object-fit:cover;display:block;cursor:pointer}
+.work-info{padding:17px}
+.work-info h3{font-size:17px}
+.work-info p{font-size:12px;color:var(--muted);margin:4px 0 12px}
+.work-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.category{font-size:11px;color:var(--blue)}
+.order-small{
+background:rgba(22,200,237,.12);color:var(--blue);
+padding:6px 12px;border-radius:7px;font-size:12px;
+border:1px solid rgba(22,200,237,.2);cursor:pointer;
 }
-form{display:grid;gap:13px}
-input,textarea,select{
- width:100%;padding:13px;border-radius:9px;
- background:#091626;border:1px solid var(--line);
- color:white;outline:none;
+.about-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;
 }
-input:focus,textarea:focus,select:focus{border-color:var(--blue)}
-textarea{min-height:120px;resize:vertical}
-.contact-info p{color:var(--muted);margin:12px 0}
+.about-visual{
+min-height:340px;border-radius:20px;
+background:linear-gradient(140deg,#102c49,#07101f);
+border:1px solid var(--border);
+display:flex;align-items:center;justify-content:center;
+text-align:center;padding:30px;
+}
+.about-visual strong{font-size:35px;color:var(--blue);display:block}
+.about-text h2{font-size:34px;margin-bottom:15px}
+.about-text p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.checks{display:grid;gap:10px}
+.checks div{color:#dbe7f5;font-size:14px}
+.checks span{color:var(--blue);margin-left:8px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{
+background:var(--panel);border:1px solid var(--border);
+padding:23px;border-radius:14px;
+}
+.step b{font-size:26px;color:var(--blue)}
+.step h3{font-size:16px;margin:8px 0}
+.step p{font-size:12px;color:var(--muted)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.why{
+padding:23px;border:1px solid var(--border);
+border-radius:14px;background:var(--panel);
+}
+.why h3{font-size:16px;margin-bottom:7px}
+.why p{color:var(--muted);font-size:13px}
+.contact-box{
+background:linear-gradient(130deg,#102a44,#101a2c);
+border:1px solid rgba(22,200,237,.25);
+border-radius:22px;padding:38px;
+display:grid;grid-template-columns:1fr 1fr;gap:30px;
+}
+.contact-box h2{font-size:30px;margin-bottom:12px}
+.contact-box p{color:var(--muted);font-size:14px}
+.contact-details{display:grid;gap:12px;margin-top:20px}
+.contact-details div{font-size:14px}
+.contact-details span{color:var(--blue)}
+form{display:grid;gap:12px}
+input,select,textarea{
+width:100%;padding:12px 14px;border-radius:9px;
+background:#081323;color:white;border:1px solid var(--border);
+outline:none;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--blue)}
+textarea{min-height:110px;resize:vertical}
+select option{background:#101a2b}
 footer{
- border-top:1px solid var(--line);padding:30px 0;
- text-align:center;color:var(--muted);font-size:13px;
+padding:35px 0;border-top:1px solid var(--border);
+text-align:center;color:var(--muted);font-size:13px;
 }
-footer strong{color:var(--blue)}
+.footer-logo{font-size:23px;font-weight:900;color:white;margin-bottom:8px}
+.footer-logo span{color:var(--blue)}
+.social{display:flex;justify-content:center;gap:20px;margin:15px 0}
+.social a{color:var(--blue)}
 .whatsapp{
- position:fixed;bottom:20px;right:20px;z-index:90;
- background:#20c86b;color:#052313;
- width:56px;height:56px;border-radius:50%;
- display:grid;place-items:center;font-size:25px;
- box-shadow:0 5px 25px #0008;
+position:fixed;bottom:20px;left:20px;z-index:90;
+background:#20c968;color:#03150b;padding:12px 18px;
+border-radius:35px;font-weight:800;box-shadow:0 5px 25px #0008;
 }
-@media(max-width:700px){
- .nav{padding:12px 0}
- nav{order:3;width:100%;justify-content:center;gap:13px}
- nav a{font-size:12px}
- .hero{min-height:500px}
- .hero-content{padding:65px 0}
- section{padding:65px 0}
- .contact-layout{grid-template-columns:1fr}
- .section-title h2{font-size:27px}
+.lightbox{
+display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);
+z-index:300;align-items:center;justify-content:center;padding:20px;
+}
+.lightbox.show{display:flex}
+.lightbox img{max-width:95%;max-height:85vh;object-fit:contain;border-radius:10px}
+.close-light{
+position:absolute;top:20px;right:25px;font-size:35px;
+background:none;border:0;color:white;cursor:pointer;
+}
+@media(max-width:850px){
+nav{
+display:none;position:absolute;top:76px;right:0;left:0;
+background:#0b1424;padding:22px;flex-direction:column;
+align-items:stretch;border-bottom:1px solid var(--border);
+}
+nav.open{display:flex}
+.menu-btn{display:block}
+.services-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+.hero{min-height:550px}
+.hero-content{padding:65px 0}
+.hero p{font-size:15px}
+.stats{gap:23px}
+.services-grid,.portfolio-grid,.why-grid{grid-template-columns:1fr}
+.about-grid,.contact-box{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr 1fr}
+.contact-box{padding:23px}
+.work img{height:230px}
 }
 </style>
 </head>
@@ -217,285 +228,402 @@ footer strong{color:var(--blue)}
 <body>
 
 <header>
- <div class="container nav">
-  <a href="#" class="logo">PAMIR<span>.</span></a>
-  <nav>
-   <a href="#home" data-i="navHome">خانه</a>
-   <a href="#services" data-i="navServices">خدمات</a>
-   <a href="#portfolio" data-i="navPortfolio">نمونه‌کارها</a>
-   <a href="#about" data-i="navAbout">درباره ما</a>
-   <a href="#contact" data-i="navContact">تماس</a>
-  </nav>
-  <select class="lang" id="language" aria-label="Language">
-   <option value="fa">دری</option>
-   <option value="ps">پښتو</option>
-   <option value="en">English</option>
-  </select>
- </div>
+<div class="container nav">
+<a class="logo" href="#home">PAMIR<span>.</span></a>
+
+<nav id="nav">
+<a href="#home" data-t="navHome">خانه</a>
+<a href="#services" data-t="navServices">خدمات</a>
+<a href="#portfolio" data-t="navPortfolio">نمونه‌کارها</a>
+<a href="#about" data-t="navAbout">درباره ما</a>
+<a href="#contact" data-t="navContact">تماس</a>
+</nav>
+
+<div class="nav-actions">
+<select class="lang" id="language" aria-label="Language">
+<option value="fa">دری</option>
+<option value="ps">پښتو</option>
+<option value="en">English</option>
+</select>
+<button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+</div>
+</div>
 </header>
 
 <main>
 <section class="hero" id="home">
- <div class="container">
-  <div class="hero-content">
-   <span class="tag" data-i="tag">استودیوی خلاقیت دیجیتال</span>
-   <h1><span>PAMIR</span><br><span data-i="heroTitle">از ایده تا دنیای دیجیتال</span></h1>
-   <p data-i="heroText">ما برای کسب‌وکار شما هویت دیجیتال می‌سازیم؛ از طراحی وب‌سایت تا لوگو و برندینگ حرفه‌ای.</p>
-   <div class="actions">
-    <a href="#portfolio" class="btn primary" data-i="seeWork">دیدن نمونه‌کارها</a>
-    <a href="#contact" class="btn secondary" data-i="orderNow">ثبت سفارش</a>
-   </div>
-  </div>
- </div>
+<div class="container">
+<div class="hero-content">
+<div class="tag" data-t="heroTag">استودیوی خلاقیت دیجیتال</div>
+<h1 data-t="heroTitle">از ایده تا <span>دنیای دیجیتال</span></h1>
+<p data-t="heroText">ما به کسب‌وکار شما کمک می‌کنیم تا با طراحی حرفه‌ای، هویت بصری قدرتمند و راهکارهای دیجیتال در دنیای آنلاین بدرخشید.</p>
+<div class="actions">
+<a class="btn primary" href="#portfolio" data-t="viewWork">مشاهده نمونه‌کارها</a>
+<a class="btn secondary" href="#contact" data-t="startProject">شروع همکاری</a>
+</div>
+<div class="stats">
+<div class="stat"><strong>100%</strong><small data-t="stat1">تعهد به کیفیت</small></div>
+<div class="stat"><strong>24/7</strong><small data-t="stat2">ارتباط با مشتری</small></div>
+<div class="stat"><strong>3</strong><small data-t="stat3">زبان پشتیبانی</small></div>
+</div>
+</div>
+</div>
 </section>
 
 <section id="services">
- <div class="container">
-  <div class="section-title">
-   <h2 data-i="servicesTitle">خدمات ما</h2>
-   <p data-i="servicesSub">راهکارهای خلاقانه برای رشد کسب‌وکار شما</p>
-  </div>
-  <div class="grid">
-   <article class="card"><div class="symbol">🌐</div><h3 data-i="service1">طراحی وب‌سایت</h3><p data-i="service1p">ساخت وب‌سایت‌های مدرن، سریع و سازگار با موبایل.</p></article>
-   <article class="card"><div class="symbol">✦</div><h3 data-i="service2">طراحی لوگو</h3><p data-i="service2p">خلق هویت بصری خاص و ماندگار برای برند شما.</p></article>
-   <article class="card"><div class="symbol">🎨</div><h3 data-i="service3">برندینگ</h3><p data-i="service3p">ساخت هویت حرفه‌ای و یکپارچه برای کسب‌وکار.</p></article>
-   <article class="card"><div class="symbol">📱</div><h3 data-i="service4">محتوای شبکه‌های اجتماعی</h3><p data-i="service4p">طراحی پست، استوری و محتوای تبلیغاتی.</p></article>
-   <article class="card"><div class="symbol">🛒</div><h3 data-i="service5">فروشگاه آنلاین</h3><p data-i="service5p">معرفی و نمایش محصولات در فضای آنلاین.</p></article>
-   <article class="card"><div class="symbol">🤖</div><h3 data-i="service6">خدمات هوش مصنوعی</h3><p data-i="service6p">استفاده خلاقانه از ابزارهای هوش مصنوعی برای محتوا و طراحی.</p></article>
-  </div>
- </div>
+<div class="container">
+<div class="section-head">
+<div class="mini" data-t="serviceMini">خدمات ما</div>
+<h2 data-t="serviceTitle">راهکارهای دیجیتال برای رشد شما</h2>
+<p data-t="serviceDesc">از طراحی هویت برند تا ساخت وب‌سایت، همراه شما هستیم.</p>
+</div>
+<div class="services-grid">
+<div class="service"><div class="service-icon">🌐</div><h3 data-t="s1">طراحی وب‌سایت</h3><p data-t="sd1">ساخت وب‌سایت‌های مدرن، سریع، زیبا و سازگار با موبایل.</p></div>
+<div class="service"><div class="service-icon">✦</div><h3 data-t="s2">طراحی لوگو</h3><p data-t="sd2">ساخت لوگوی اختصاصی و حرفه‌ای برای هویت برند شما.</p></div>
+<div class="service"><div class="service-icon">🎨</div><h3 data-t="s3">برندینگ</h3><p data-t="sd3">طراحی هویت بصری، رنگ‌ها و سبک مشخص برای برند.</p></div>
+<div class="service"><div class="service-icon">📱</div><h3 data-t="s4">پست و استوری</h3><p data-t="sd4">طراحی محتوای تبلیغاتی جذاب برای شبکه‌های اجتماعی.</p></div>
+<div class="service"><div class="service-icon">🛒</div><h3 data-t="s5">فروشگاه آنلاین</h3><p data-t="sd5">ساخت صفحات فروشگاهی برای معرفی و فروش محصولات.</p></div>
+<div class="service"><div class="service-icon">🤖</div><h3 data-t="s6">خدمات هوش مصنوعی</h3><p data-t="sd6">استفاده خلاقانه از ابزارهای هوش مصنوعی برای کسب‌وکار.</p></div>
+</div>
+</div>
 </section>
 
 <section id="portfolio">
- <div class="container">
-  <div class="section-title">
-   <h2 data-i="portfolioTitle">نمونه‌کارهای ما</h2>
-   <p data-i="portfolioSub">چند نمونه نمایشی از سبک طراحی PAMIR</p>
-  </div>
-  <div class="grid">
-   <article class="portfolio-card"><small>01 / WEB DESIGN</small><h3 data-i="work1">طراحی وب‌سایت</h3><p data-i="work1p">طراحی مدرن و حرفه‌ای</p></article>
-   <article class="portfolio-card"><small>02 / BRAND IDENTITY</small><h3 data-i="work2">هویت برند</h3><p data-i="work2p">طراحی هویت بصری</p></article>
-   <article class="portfolio-card"><small>03 / SOCIAL MEDIA</small><h3 data-i="work3">طراحی شبکه اجتماعی</h3><p data-i="work3p">پست و محتوای تبلیغاتی</p></article>
-   <article class="portfolio-card"><small>04 / LOGO DESIGN</small><h3 data-i="work4">طراحی لوگو</h3><p data-i="work4p">لوگوهای خاص و خلاقانه</p></article>
-  </div>
-  <p style="text-align:center;color:var(--muted);font-size:12px;margin-top:18px" data-i="sampleNote">این موارد طرح‌های نمایشی هستند، نه پروژه‌های تأییدشده مشتریان.</p>
- </div>
+<div class="container">
+<div class="section-head">
+<div class="mini" data-t="portMini">گالری خلاقیت</div>
+<h2 data-t="portTitle">نمونه‌کارهای ما</h2>
+<p data-t="portDesc">با طرح‌های ما آشنا شوید و برای سفارش طرح دلخواه خود اقدام کنید.</p>
+</div>
+
+<div class="filters">
+<button class="filter active" data-filter="all" data-t="all">همه</button>
+<button class="filter" data-filter="logo" data-t="logo">لوگو</button>
+<button class="filter" data-filter="web" data-t="web">وب‌سایت</button>
+<button class="filter" data-filter="brand" data-t="brand">برندینگ</button>
+<button class="filter" data-filter="social" data-t="social">تبلیغاتی</button>
+</div>
+
+<div class="portfolio-grid" id="portfolioGrid">
+
+<article class="work" data-category="logo">
+<img src="https://images.unsplash.com/photo-1634942536790-2534db5a8d4b?w=900" alt="نمونه طراحی لوگو" loading="lazy">
+<div class="work-info"><h3 data-t="p1">لوگوی مدرن</h3><p data-t="p1d">طراحی هویت و نشان تجاری</p><div class="work-bottom"><span class="category" data-t="logo">لوگو</span><button class="order-small" data-order="Modern Logo" data-t="order">سفارش مشابه</button></div></div>
+</article>
+
+<article class="work" data-category="web">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900" alt="نمونه طراحی وب‌سایت" loading="lazy">
+<div class="work-info"><h3 data-t="p2">طراحی وب‌سایت</h3><p data-t="p2d">طراحی مدرن و حرفه‌ای</p><div class="work-bottom"><span class="category" data-t="web">وب‌سایت</span><button class="order-small" data-order="Website Design" data-t="order">سفارش مشابه</button></div></div>
+</article>
+
+<article class="work" data-category="brand">
+<img src="https://images.unsplash.com/photo-1634942536790-2534db5a8d4b?w=900&sat=-40" alt="نمونه برندینگ" loading="lazy">
+<div class="work-info"><h3 data-t="p3">هویت برند</h3><p data-t="p3d">سبک بصری اختصاصی</p><div class="work-bottom"><span class="category" data-t="brand">برندینگ</span><button class="order-small" data-order="Brand Identity" data-t="order">سفارش مشابه</button></div></div>
+</article>
+
+<article class="work" data-category="social">
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=900" alt="نمونه طراحی تبلیغاتی" loading="lazy">
+<div class="work-info"><h3 data-t="p4">طرح تبلیغاتی</h3><p data-t="p4d">محتوای حرفه‌ای شبکه‌های اجتماعی</p><div class="work-bottom"><span class="category" data-t="social">تبلیغاتی</span><button class="order-small" data-order="Social Media Design" data-t="order">سفارش مشابه</button></div></div>
+</article>
+
+<article class="work" data-category="web">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900" alt="نمونه وب‌سایت" loading="lazy">
+<div class="work-info"><h3 data-t="p5">صفحه دیجیتال</h3><p data-t="p5d">تجربه کاربری و طراحی وب</p><div class="work-bottom"><span class="category" data-t="web">وب‌سایت</span><button class="order-small" data-order="Digital Website" data-t="order">سفارش مشابه</button></div></div>
+</article>
+
+<article class="work" data-category="social">
+<img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?w=900" alt="نمونه تبلیغات" loading="lazy">
+<div class="work-info"><h3 data-t="p6">کمپین تبلیغاتی</h3><p data-t="p6d">طراحی محتوای بازاریابی</p><div class="work-bottom"><span class="category" data-t="social">تبلیغاتی</span><button class="order-small" data-order="Advertising Campaign" data-t="order">سفارش مشابه</button></div></div>
+</article>
+
+</div>
+<p style="text-align:center;color:#9aaac1;font-size:12px;margin-top:20px" data-t="sampleNote">تصاویر این گالری نمونه‌های نمایشی هستند و به‌عنوان پروژه‌های واقعی معرفی نمی‌شوند.</p>
+</div>
 </section>
 
 <section id="about">
- <div class="container">
-  <div class="section-title"><h2 data-i="aboutTitle">درباره PAMIR</h2></div>
-  <div class="about-box">
-   <h2>PAMIR DIGITAL STUDIO</h2>
-   <p data-i="aboutText">PAMIR یک استودیوی خلاقیت دیجیتال است که با هدف تبدیل ایده‌ها به تجربه‌های زیبا و کاربردی فعالیت می‌کند. ما تلاش می‌کنیم برای هر کسب‌وکار راهکار دیجیتال مناسب ارائه کنیم.</p>
-  </div>
- </div>
+<div class="container about-grid">
+<div class="about-visual">
+<div><strong>PAMIR</strong><h2>DIGITAL STUDIO</h2><p style="color:#9aaac1" data-t="visualText">خلاقیت، کیفیت، اعتماد</p></div>
+</div>
+<div class="about-text">
+<div class="mini" style="color:var(--blue)" data-t="aboutMini">درباره پامیر</div>
+<h2 data-t="aboutTitle">ما ایده‌ها را به واقعیت تبدیل می‌کنیم</h2>
+<p data-t="aboutDesc">PAMIR DIGITAL STUDIO یک استودیوی خدمات دیجیتال است که با تمرکز بر طراحی خلاقانه و راهکارهای مدرن، به کسب‌وکارها کمک می‌کند حضور حرفه‌ای در فضای آنلاین داشته باشند.</p>
+<div class="checks">
+<div><span>✓</span><span data-t="c1">طراحی مدرن و اختصاصی</span></div>
+<div><span>✓</span><span data-t="c2">توجه به نیاز مشتری</span></div>
+<div><span>✓</span><span data-t="c3">پشتیبانی و ارتباط مستقیم</span></div>
+<div><span>✓</span><span data-t="c4">قیمت‌گذاری متناسب با پروژه</span></div>
+</div>
+</div>
+</div>
 </section>
 
-<section id="process">
- <div class="container">
-  <div class="section-title">
-   <h2 data-i="processTitle">مراحل همکاری</h2>
-   <p data-i="processSub">از اولین پیام تا تحویل پروژه</p>
-  </div>
-  <div class="grid">
-   <article class="card step"><h3 data-i="step1">ثبت درخواست</h3><p data-i="step1p">نیاز و ایده خود را با ما شریک کنید.</p></article>
-   <article class="card step"><h3 data-i="step2">بررسی و توافق</h3><p data-i="step2p">جزئیات، زمان و هزینه پروژه مشخص می‌شود.</p></article>
-   <article class="card step"><h3 data-i="step3">طراحی پروژه</h3><p data-i="step3p">کار طراحی و اجرای پروژه آغاز می‌شود.</p></article>
-   <article class="card step"><h3 data-i="step4">تحویل نهایی</h3><p data-i="step4p">پروژه نهایی پس از بررسی به شما تحویل می‌شود.</p></article>
-  </div>
- </div>
+<section>
+<div class="container">
+<div class="section-head">
+<div class="mini" data-t="stepsMini">مراحل همکاری</div>
+<h2 data-t="stepsTitle">چگونه کار می‌کنیم؟</h2>
+</div>
+<div class="steps">
+<div class="step"><b>01</b><h3 data-t="st1">ثبت سفارش</h3><p data-t="st1d">نیاز و خواسته خود را برای ما بفرستید.</p></div>
+<div class="step"><b>02</b><h3 data-t="st2">بررسی پروژه</h3><p data-t="st2d">جزئیات پروژه و قیمت بررسی می‌شود.</p></div>
+<div class="step"><b>03</b><h3 data-t="st3">طراحی و اجرا</h3><p data-t="st3d">کار شما با دقت طراحی و آماده می‌شود.</p></div>
+<div class="step"><b>04</b><h3 data-t="st4">تحویل پروژه</h3><p data-t="st4d">نتیجه نهایی به شما تحویل داده می‌شود.</p></div>
+</div>
+</div>
 </section>
 
-<section id="testimonials">
- <div class="container">
-  <div class="section-title">
-   <h2 data-i="testimonialTitle">چرا PAMIR؟</h2>
-   <p data-i="testimonialSub">تعهد ما، کیفیت و خلاقیت در هر پروژه است.</p>
-  </div>
-  <div class="grid">
-   <article class="card"><div class="symbol">⚡</div><h3 data-i="reason1">سرعت و دقت</h3><p data-i="reason1p">توجه به جزئیات و برنامه‌ریزی مناسب.</p></article>
-   <article class="card"><div class="symbol">💡</div><h3 data-i="reason2">ایده‌های خلاقانه</h3><p data-i="reason2p">راهکارهای تازه برای معرفی بهتر برند شما.</p></article>
-   <article class="card"><div class="symbol">🤝</div><h3 data-i="reason3">ارتباط مستقیم</h3><p data-i="reason3p">ارتباط آسان و پیگیری سفارش از طریق واتساپ.</p></article>
-  </div>
- </div>
-</section>
-
-<section id="faq">
- <div class="container">
-  <div class="section-title"><h2 data-i="faqTitle">سوالات متداول</h2></div>
-  <div class="faq">
-   <details><summary data-i="faq1">چگونه سفارش ثبت کنم؟</summary><p data-i="faq1a">فرم سفارش را تکمیل کنید تا پیام شما از طریق واتساپ ارسال شود.</p></details>
-   <details><summary data-i="faq2">آیا قیمت خدمات ثابت است؟</summary><p data-i="faq2a">قیمت با توجه به نوع و جزئیات پروژه تعیین می‌شود.</p></details>
-   <details><summary data-i="faq3">آیا برای موبایل هم طراحی می‌کنید؟</summary><p data-i="faq3a">بلی، وب‌سایت‌ها با صفحه‌های مختلف سازگار طراحی می‌شوند.</p></details>
-   <details><summary data-i="faq4">چگونه نمونه‌کارهای بیشتر را ببینم؟</summary><p data-i="faq4a">از طریق واتساپ درخواست نمونه‌کارهای بیشتر کنید.</p></details>
-  </div>
- </div>
+<section>
+<div class="container">
+<div class="section-head">
+<div class="mini" data-t="whyMini">چرا پامیر؟</div>
+<h2 data-t="whyTitle">دلیل انتخاب ما</h2>
+</div>
+<div class="why-grid">
+<div class="why"><h3>✦ <span data-t="w1">خلاقیت</span></h3><p data-t="w1d">ایده‌های تازه و طراحی متفاوت برای هر پروژه.</p></div>
+<div class="why"><h3>◈ <span data-t="w2">کیفیت</span></h3><p data-t="w2d">توجه به جزئیات و ارائه کار باکیفیت.</p></div>
+<div class="why"><h3>⌘ <span data-t="w3">ارتباط آسان</span></h3><p data-t="w3d">ارتباط مستقیم و آسان از طریق واتساپ.</p></div>
+</div>
+</div>
 </section>
 
 <section id="contact">
- <div class="container">
-  <div class="section-title">
-   <h2 data-i="contactTitle">با ما در تماس باشید</h2>
-   <p data-i="contactSub">ایده خود را به یک پروژه واقعی تبدیل کنید.</p>
-  </div>
-  <div class="contact-layout">
-   <div class="card">
-    <h3 data-i="formTitle">فرم ثبت سفارش</h3>
-    <form id="orderForm">
-     <input id="customerName" required placeholder="نام شما" data-placeholder="namePlaceholder">
-     <input id="customerPhone" placeholder="شماره تماس" data-placeholder="phonePlaceholder">
-     <select id="serviceSelect" required>
-      <option value="" data-i="chooseService">نوع خدمات را انتخاب کنید</option>
-      <option value="Website Design" data-i="option1">طراحی وب‌سایت</option>
-      <option value="Logo Design" data-i="option2">طراحی لوگو</option>
-      <option value="Branding" data-i="option3">برندینگ</option>
-      <option value="Social Media Design" data-i="option4">طراحی شبکه‌های اجتماعی</option>
-      <option value="Online Store" data-i="option5">فروشگاه آنلاین</option>
-      <option value="Other" data-i="option6">سایر خدمات</option>
-     </select>
-     <textarea id="customerMessage" required placeholder="جزئیات سفارش خود را بنویسید" data-placeholder="messagePlaceholder"></textarea>
-     <button class="btn primary" type="submit" data-i="sendOrder">ارسال سفارش در واتساپ</button>
-    </form>
-   </div>
-   <div class="card contact-info">
-    <h3 data-i="contactInfo">اطلاعات تماس</h3>
-    <p>📍 <span data-i="location">کابل، افغانستان</span></p>
-    <p>📱 +93767526658</p>
-    <p>🌐 PAMIR DIGITAL STUDIO</p>
-    <p data-i="contactText">برای مشاوره و ثبت سفارش از طریق واتساپ با ما ارتباط بگیرید.</p>
-    <a class="btn primary" href="https://wa.me/93767526658" target="_blank" rel="noopener" data-i="chatWhatsApp">گفتگو در واتساپ</a>
-   </div>
-  </div>
- </div>
+<div class="container">
+<div class="contact-box">
+<div>
+<div class="mini" style="color:var(--blue)" data-t="contactMini">با ما در تماس شوید</div>
+<h2 data-t="contactTitle">پروژه بعدی شما از اینجا شروع می‌شود!</h2>
+<p data-t="contactDesc">برای سفارش طراحی یا دریافت معلومات بیشتر، پیام بفرستید.</p>
+<div class="contact-details">
+<div>📱 <span data-t="phoneLabel">واتساپ:</span> +93 767 526 658</div>
+<div>📍 <span data-t="addressLabel">موقعیت:</span> کابل، افغانستان</div>
+<div>🌐 <span data-t="brandLabel">برند:</span> PAMIR DIGITAL STUDIO</div>
+</div>
+</div>
+<form id="orderForm">
+<input id="customerName" type="text" placeholder="نام شما" required data-ph="namePh">
+<input id="customerPhone" type="tel" placeholder="شماره تماس شما" data-ph="phonePh">
+<select id="serviceSelect" required>
+<option value="" data-t="chooseService">نوع خدمات را انتخاب کنید</option>
+<option value="Website Design" data-t="s1">طراحی وب‌سایت</option>
+<option value="Logo Design" data-t="s2">طراحی لوگو</option>
+<option value="Branding" data-t="s3">برندینگ</option>
+<option value="Social Media Design" data-t="s4">پست و استوری</option>
+<option value="Online Store" data-t="s5">فروشگاه آنلاین</option>
+<option value="AI Services" data-t="s6">خدمات هوش مصنوعی</option>
+</select>
+<textarea id="customerMessage" placeholder="توضیحات پروژه شما..." data-ph="messagePh"></textarea>
+<button class="btn primary" type="submit" data-t="sendOrder">ارسال سفارش در واتساپ</button>
+</form>
+</div>
+</div>
 </section>
 </main>
 
 <footer>
- <div class="container">
-  <strong>PAMIR DIGITAL STUDIO</strong>
-  <p data-i="footerText">از ایده تا دنیای دیجیتال</p>
-  <p>© <span id="year"></span> PAMIR. <span data-i="rights">تمام حقوق محفوظ است.</span></p>
- </div>
+<div class="container">
+<div class="footer-logo">PAMIR<span>.</span></div>
+<p data-t="footerText">از ایده تا دنیای دیجیتال</p>
+<div class="social">
+<a href="https://wa.me/93767526658" target="_blank">WhatsApp</a>
+</div>
+<p>© 2026 PAMIR DIGITAL STUDIO. <span data-t="rights">تمام حقوق محفوظ است.</span></p>
+</div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/93767526658" target="_blank" rel="noopener" aria-label="WhatsApp">☏</a>
+<a class="whatsapp" href="https://wa.me/93767526658" target="_blank">☏ WhatsApp</a>
+
+<div class="lightbox" id="lightbox">
+<button class="close-light" id="closeLight" aria-label="Close">×</button>
+<img id="lightboxImage" src="" alt="Preview">
+</div>
 
 <script>
-const translations={
+const phoneNumber = "93767526658";
+
+const translations = {
 fa:{
 navHome:"خانه",navServices:"خدمات",navPortfolio:"نمونه‌کارها",navAbout:"درباره ما",navContact:"تماس",
-tag:"استودیوی خلاقیت دیجیتال",heroTitle:"از ایده تا دنیای دیجیتال",heroText:"ما برای کسب‌وکار شما هویت دیجیتال می‌سازیم؛ از طراحی وب‌سایت تا لوگو و برندینگ حرفه‌ای.",
-seeWork:"دیدن نمونه‌کارها",orderNow:"ثبت سفارش",servicesTitle:"خدمات ما",servicesSub:"راهکارهای خلاقانه برای رشد کسب‌وکار شما",
-service1:"طراحی وب‌سایت",service1p:"ساخت وب‌سایت‌های مدرن، سریع و سازگار با موبایل.",
-service2:"طراحی لوگو",service2p:"خلق هویت بصری خاص و ماندگار برای برند شما.",
-service3:"برندینگ",service3p:"ساخت هویت حرفه‌ای و یکپارچه برای کسب‌وکار.",
-service4:"محتوای شبکه‌های اجتماعی",service4p:"طراحی پست، استوری و محتوای تبلیغاتی.",
-service5:"فروشگاه آنلاین",service5p:"معرفی و نمایش محصولات در فضای آنلاین.",
-service6:"خدمات هوش مصنوعی",service6p:"استفاده خلاقانه از ابزارهای هوش مصنوعی برای محتوا و طراحی.",
-portfolioTitle:"نمونه‌کارهای ما",portfolioSub:"چند نمونه نمایشی از سبک طراحی PAMIR",
-work1:"طراحی وب‌سایت",work1p:"طراحی مدرن و حرفه‌ای",work2:"هویت برند",work2p:"طراحی هویت بصری",work3:"طراحی شبکه اجتماعی",work3p:"پست و محتوای تبلیغاتی",work4:"طراحی لوگو",work4p:"لوگوهای خاص و خلاقانه",
-sampleNote:"این موارد طرح‌های نمایشی هستند، نه پروژه‌های تأییدشده مشتریان.",
-aboutTitle:"درباره PAMIR",aboutText:"PAMIR یک استودیوی خلاقیت دیجیتال است که با هدف تبدیل ایده‌ها به تجربه‌های زیبا و کاربردی فعالیت می‌کند. ما تلاش می‌کنیم برای هر کسب‌وکار راهکار دیجیتال مناسب ارائه کنیم.",
-processTitle:"مراحل همکاری",processSub:"از اولین پیام تا تحویل پروژه",
-step1:"ثبت درخواست",step1p:"نیاز و ایده خود را با ما شریک کنید.",step2:"بررسی و توافق",step2p:"جزئیات، زمان و هزینه پروژه مشخص می‌شود.",step3:"طراحی پروژه",step3p:"کار طراحی و اجرای پروژه آغاز می‌شود.",step4:"تحویل نهایی",step4p:"پروژه نهایی پس از بررسی به شما تحویل می‌شود.",
-testimonialTitle:"چرا PAMIR؟",testimonialSub:"تعهد ما، کیفیت و خلاقیت در هر پروژه است.",
-reason1:"سرعت و دقت",reason1p:"توجه به جزئیات و برنامه‌ریزی مناسب.",reason2:"ایده‌های خلاقانه",reason2p:"راهکارهای تازه برای معرفی بهتر برند شما.",reason3:"ارتباط مستقیم",reason3p:"ارتباط آسان و پیگیری سفارش از طریق واتساپ.",
-faqTitle:"سوالات متداول",faq1:"چگونه سفارش ثبت کنم؟",faq1a:"فرم سفارش را تکمیل کنید تا پیام شما از طریق واتساپ ارسال شود.",faq2:"آیا قیمت خدمات ثابت است؟",faq2a:"قیمت با توجه به نوع و جزئیات پروژه تعیین می‌شود.",faq3:"آیا برای موبایل هم طراحی می‌کنید؟",faq3a:"بلی، وب‌سایت‌ها با صفحه‌های مختلف سازگار طراحی می‌شوند.",faq4:"چگونه نمونه‌کارهای بیشتر را ببینم؟",faq4a:"از طریق واتساپ درخواست نمونه‌کارهای بیشتر کنید.",
-contactTitle:"با ما در تماس باشید",contactSub:"ایده خود را به یک پروژه واقعی تبدیل کنید.",formTitle:"فرم ثبت سفارش",
-namePlaceholder:"نام شما",phonePlaceholder:"شماره تماس",chooseService:"نوع خدمات را انتخاب کنید",
-option1:"طراحی وب‌سایت",option2:"طراحی لوگو",option3:"برندینگ",option4:"طراحی شبکه‌های اجتماعی",option5:"فروشگاه آنلاین",option6:"سایر خدمات",
-messagePlaceholder:"جزئیات سفارش خود را بنویسید",sendOrder:"ارسال سفارش در واتساپ",contactInfo:"اطلاعات تماس",location:"کابل، افغانستان",contactText:"برای مشاوره و ثبت سفارش از طریق واتساپ با ما ارتباط بگیرید.",chatWhatsApp:"گفتگو در واتساپ",footerText:"از ایده تا دنیای دیجیتال",rights:"تمام حقوق محفوظ است."
+heroTag:"استودیوی خلاقیت دیجیتال",heroTitle:'از ایده تا <span>دنیای دیجیتال</span>',
+heroText:"ما به کسب‌وکار شما کمک می‌کنیم تا با طراحی حرفه‌ای، هویت بصری قدرتمند و راهکارهای دیجیتال در دنیای آنلاین بدرخشید.",
+viewWork:"مشاهده نمونه‌کارها",startProject:"شروع همکاری",stat1:"تعهد به کیفیت",stat2:"ارتباط با مشتری",stat3:"زبان پشتیبانی",
+serviceMini:"خدمات ما",serviceTitle:"راهکارهای دیجیتال برای رشد شما",serviceDesc:"از طراحی هویت برند تا ساخت وب‌سایت، همراه شما هستیم.",
+s1:"طراحی وب‌سایت",sd1:"ساخت وب‌سایت‌های مدرن، سریع، زیبا و سازگار با موبایل.",
+s2:"طراحی لوگو",sd2:"ساخت لوگوی اختصاصی و حرفه‌ای برای هویت برند شما.",
+s3:"برندینگ",sd3:"طراحی هویت بصری، رنگ‌ها و سبک مشخص برای برند.",
+s4:"پست و استوری",sd4:"طراحی محتوای تبلیغاتی جذاب برای شبکه‌های اجتماعی.",
+s5:"فروشگاه آنلاین",sd5:"ساخت صفحات فروشگاهی برای معرفی و فروش محصولات.",
+s6:"خدمات هوش مصنوعی",sd6:"استفاده خلاقانه از ابزارهای هوش مصنوعی برای کسب‌وکار.",
+portMini:"گالری خلاقیت",portTitle:"نمونه‌کارهای ما",portDesc:"با طرح‌های ما آشنا شوید و برای سفارش طرح دلخواه خود اقدام کنید.",
+all:"همه",logo:"لوگو",web:"وب‌سایت",brand:"برندینگ",social:"تبلیغاتی",order:"سفارش مشابه",
+p1:"لوگوی مدرن",p1d:"طراحی هویت و نشان تجاری",p2:"طراحی وب‌سایت",p2d:"طراحی مدرن و حرفه‌ای",p3:"هویت برند",p3d:"سبک بصری اختصاصی",p4:"طرح تبلیغاتی",p4d:"محتوای حرفه‌ای شبکه‌های اجتماعی",p5:"صفحه دیجیتال",p5d:"تجربه کاربری و طراحی وب",p6:"کمپین تبلیغاتی",p6d:"طراحی محتوای بازاریابی",
+sampleNote:"تصاویر این گالری نمونه‌های نمایشی هستند و به‌عنوان پروژه‌های واقعی معرفی نمی‌شوند.",
+visualText:"خلاقیت، کیفیت، اعتماد",aboutMini:"درباره پامیر",aboutTitle:"ما ایده‌ها را به واقعیت تبدیل می‌کنیم",
+aboutDesc:"PAMIR DIGITAL STUDIO یک استودیوی خدمات دیجیتال است که با تمرکز بر طراحی خلاقانه و راهکارهای مدرن، به کسب‌وکارها کمک می‌کند حضور حرفه‌ای در فضای آنلاین داشته باشند.",
+c1:"طراحی مدرن و اختصاصی",c2:"توجه به نیاز مشتری",c3:"پشتیبانی و ارتباط مستقیم",c4:"قیمت‌گذاری متناسب با پروژه",
+stepsMini:"مراحل همکاری",stepsTitle:"چگونه کار می‌کنیم؟",st1:"ثبت سفارش",st1d:"نیاز و خواسته خود را برای ما بفرستید.",st2:"بررسی پروژه",st2d:"جزئیات پروژه و قیمت بررسی می‌شود.",st3:"طراحی و اجرا",st3d:"کار شما با دقت طراحی و آماده می‌شود.",st4:"تحویل پروژه",st4d:"نتیجه نهایی به شما تحویل داده می‌شود.",
+whyMini:"چرا پامیر؟",whyTitle:"دلیل انتخاب ما",w1:"خلاقیت",w1d:"ایده‌های تازه و طراحی متفاوت برای هر پروژه.",w2:"کیفیت",w2d:"توجه به جزئیات و ارائه کار باکیفیت.",w3:"ارتباط آسان",w3d:"ارتباط مستقیم و آسان از طریق واتساپ.",
+contactMini:"با ما در تماس شوید",contactTitle:"پروژه بعدی شما از اینجا شروع می‌شود!",contactDesc:"برای سفارش طراحی یا دریافت معلومات بیشتر، پیام بفرستید.",
+phoneLabel:"واتساپ:",addressLabel:"موقعیت:",brandLabel:"برند:",chooseService:"نوع خدمات را انتخاب کنید",namePh:"نام شما",phonePh:"شماره تماس شما",messagePh:"توضیحات پروژه شما...",sendOrder:"ارسال سفارش در واتساپ",
+footerText:"از ایده تا دنیای دیجیتال",rights:"تمام حقوق محفوظ است.",menuOpen:"بازکردن منو"
 },
 ps:{
 navHome:"کور",navServices:"خدمتونه",navPortfolio:"نمونې",navAbout:"زموږ په اړه",navContact:"اړیکه",
-tag:"د ډیجیټل خلاقیت سټوډیو",heroTitle:"له مفکورې تر ډیجیټل نړۍ",heroText:"موږ ستاسو سوداګرۍ ته ډیجیټل هویت جوړوو؛ د ویب‌سایټ، لوګو او برانډ ډیزاین له لارې.",
-seeWork:"نمونې وګورئ",orderNow:"غوښتنه ثبت کړئ",servicesTitle:"زموږ خدمتونه",servicesSub:"ستاسو د سوداګرۍ د ودې لپاره خلاقانه حللارې",
-service1:"د ویب‌سایټ ډیزاین",service1p:"عصري او د موبایل لپاره مناسب ویب‌سایټونه.",
-service2:"د لوګو ډیزاین",service2p:"ستاسو د برانډ لپاره ځانګړی بصري هویت.",
-service3:"برانډ جوړونه",service3p:"ستاسو سوداګرۍ ته مسلکي هویت ورکول.",
-service4:"د ټولنیزو شبکو محتوا",service4p:"د پوسټونو او اعلانونو ډیزاین.",
-service5:"آنلاین پلورنځی",service5p:"ستاسو د محصولاتو آنلاین ننداره.",
-service6:"د مصنوعي ځیرکتیا خدمتونه",service6p:"د ډیزاین او محتوا لپاره د AI وسایلو کارول.",
-portfolioTitle:"زموږ نمونې",portfolioSub:"د PAMIR د ډیزاین څو بېلګې",
-work1:"د ویب‌سایټ ډیزاین",work1p:"عصري او مسلکي ډیزاین",work2:"د برانډ هویت",work2p:"بصري هویت جوړول",work3:"د ټولنیزو شبکو ډیزاین",work3p:"پوسټونه او اعلانونه",work4:"د لوګو ډیزاین",work4p:"ځانګړي او خلاقانه لوګوګان",
-sampleNote:"دا یوازې د ډیزاین بېلګې دي، د مشتریانو تایید شوې پروژې نه دي.",
-aboutTitle:"د PAMIR په اړه",aboutText:"PAMIR د ډیجیټل خلاقیت یوه سټوډیو ده چې مفکورې په ښکلو او ګټورو تجربو بدلوي. موږ هرې سوداګرۍ ته مناسب ډیجیټل حلونه وړاندې کوو.",
-processTitle:"د همکارۍ پړاوونه",processSub:"له لومړي پیغام څخه د پروژې تر سپارلو",
-step1:"غوښتنه ثبتول",step1p:"خپله اړتیا او مفکوره له موږ سره شریکه کړئ.",step2:"ارزونه او هوکړه",step2p:"د پروژې جزئیات، وخت او لګښت ټاکل کېږي.",step3:"د پروژې ډیزاین",step3p:"د ډیزاین او جوړولو کار پیلېږي.",step4:"وروستۍ سپارنه",step4p:"وروستۍ پروژه له ارزونې وروسته سپارل کېږي.",
-testimonialTitle:"ولې PAMIR؟",testimonialSub:"زموږ ژمنتیا په هره پروژه کې کیفیت او خلاقیت دی.",
-reason1:"چټکتیا او دقت",reason1p:"جزئیاتو ته پاملرنه او مناسب پلان.",reason2:"خلاقانه نظریې",reason2p:"ستاسو د برانډ د ښه پېژندلو لپاره نوې لارې.",reason3:"مستقیمه اړیکه",reason3p:"د واټساپ له لارې اسانه اړیکه او د غوښتنې تعقیب.",
-faqTitle:"عامې پوښتنې",faq1:"څنګه غوښتنه ثبت کړم؟",faq1a:"فورمه ډکه کړئ، ستاسو پیغام به د واټساپ له لارې واستول شي.",faq2:"ایا د خدمتونو بیې ثابتې دي؟",faq2a:"بیه د پروژې د ډول او جزئیاتو له مخې ټاکل کېږي.",faq3:"ایا د موبایل لپاره هم ډیزاین کوئ؟",faq3a:"هو، ویب‌سایټونه د بېلابېلو سکرینونو لپاره برابرېږي.",faq4:"څنګه نورې نمونې وګورم؟",faq4a:"د نورو نمونو لپاره د واټساپ له لارې اړیکه ونیسئ.",
-contactTitle:"له موږ سره اړیکه ونیسئ",contactSub:"خپله مفکوره په یوې ریښتینې پروژې بدله کړئ.",formTitle:"د غوښتنې فورمه",
-namePlaceholder:"ستاسو نوم",phonePlaceholder:"د اړیکې شمېره",chooseService:"د خدمت ډول وټاکئ",
-option1:"د ویب‌سایټ ډیزاین",option2:"د لوګو ډیزاین",option3:"برانډ جوړونه",option4:"د ټولنیزو شبکو ډیزاین",option5:"آنلاین پلورنځی",option6:"نور خدمتونه",
-messagePlaceholder:"د خپلې غوښتنې جزئیات ولیکئ",sendOrder:"غوښتنه په واټساپ کې واستوئ",contactInfo:"د اړیکې معلومات",location:"کابل، افغانستان",contactText:"د مشورې او غوښتنې لپاره د واټساپ له لارې اړیکه ونیسئ.",chatWhatsApp:"په واټساپ کې خبرې وکړئ",footerText:"له مفکورې تر ډیجیټل نړۍ",rights:"ټول حقوق خوندي دي."
+heroTag:"د ډیجیټل خلاقیت سټوډیو",heroTitle:'له مفکورې څخه تر <span>ډیجیټل نړۍ</span>',
+heroText:"موږ ستاسو له سوداګرۍ سره مرسته کوو چې په مسلکي ډیزاین او ډیجیټل حللارو آنلاین وځلېږي.",
+viewWork:"نمونې وګورئ",startProject:"همکاري پیل کړئ",stat1:"کیفیت ته ژمنتیا",stat2:"له مشتریانو سره اړیکه",stat3:"ملاتړ ژبې",
+serviceMini:"زموږ خدمتونه",serviceTitle:"ستاسو د ودې لپاره ډیجیټل حللارې",serviceDesc:"د برانډ له ډیزاین څخه تر وېب‌سایټ جوړولو پورې.",
+s1:"د وېب‌سایټ ډیزاین",sd1:"عصري او د موبایل لپاره مناسب وېب‌سایټونه.",
+s2:"د لوګو ډیزاین",sd2:"ستاسو د برانډ لپاره ځانګړی او مسلکي لوګو.",
+s3:"برانډینګ",sd3:"د برانډ بصري هویت، رنګونه او ځانګړی سبک.",
+s4:"پوسټ او سټوري",sd4:"د ټولنیزو شبکو لپاره ښکلي تبلیغاتي ډیزاینونه.",
+s5:"آنلاین پلورنځی",sd5:"د محصولاتو د معرفي او پلور لپاره پلورنځی.",
+s6:"د مصنوعي ځیرکتیا خدمتونه",sd6:"د سوداګرۍ لپاره د AI وسایلو کارول.",
+portMini:"د خلاقیت ګالري",portTitle:"زموږ نمونې",portDesc:"زموږ ډیزاینونه وګورئ او د خپلې خوښې طرحې غوښتنه وکړئ.",
+all:"ټول",logo:"لوګو",web:"وېب‌سایټ",brand:"برانډینګ",social:"اعلانونه",order:"ورته ډیزاین وغواړئ",
+p1:"عصري لوګو",p1d:"د برانډ نښه او هویت",p2:"د وېب‌سایټ ډیزاین",p2d:"عصري او مسلکي ډیزاین",p3:"د برانډ هویت",p3d:"ځانګړی بصري سبک",p4:"اعلانیز ډیزاین",p4d:"د ټولنیزو شبکو لپاره ډیزاین",p5:"ډیجیټل پاڼه",p5d:"د کاروونکي تجربه او وېب ډیزاین",p6:"اعلانیز کمپاین",p6d:"د بازارموندنې محتوا",
+sampleNote:"په دې ګالري کې انځورونه د ښودلو بېلګې دي، واقعي پروژې نه دي.",
+visualText:"خلاقیت، کیفیت، باور",aboutMini:"د پامیر په اړه",aboutTitle:"موږ مفکورې په حقیقت بدلوو",
+aboutDesc:"PAMIR DIGITAL STUDIO د ډیجیټل خدمتونو یوه سټوډیو ده چې د عصري ډیزاین او حللارو له لارې له سوداګرۍ سره مرسته کوي.",
+c1:"عصري او ځانګړی ډیزاین",c2:"د مشتریانو اړتیاوو ته پاملرنه",c3:"مستقیم ملاتړ او اړیکه",c4:"د پروژې مطابق بیه",
+stepsMini:"د همکارۍ پړاوونه",stepsTitle:"موږ څنګه کار کوو؟",st1:"غوښتنه ثبتول",st1d:"خپلې اړتیاوې موږ ته راولېږئ.",st2:"د پروژې ارزونه",st2d:"د پروژې جزئیات او بیه څېړل کېږي.",st3:"ډیزاین او جوړول",st3d:"ستاسو پروژه په دقت چمتو کېږي.",st4:"د پروژې سپارل",st4d:"وروستۍ پایله تاسو ته سپارل کېږي.",
+whyMini:"ولې پامیر؟",whyTitle:"موږ ولې انتخاب کړئ؟",w1:"خلاقیت",w1d:"د هرې پروژې لپاره نوې مفکورې.",w2:"کیفیت",w2d:"جزئیاتو ته پاملرنه او لوړ کیفیت.",w3:"اسانه اړیکه",w3d:"د واټساپ له لارې مستقیمه اړیکه.",
+contactMini:"له موږ سره اړیکه",contactTitle:"ستاسو بله پروژه له همدې ځایه پیلېږي!",contactDesc:"د ډیزاین غوښتنې یا نورو معلوماتو لپاره پیغام راولېږئ.",
+phoneLabel:"واټساپ:",addressLabel:"ځای:",brandLabel:"برانډ:",chooseService:"خدمت وټاکئ",namePh:"ستاسو نوم",phonePh:"ستاسو د اړیکې شمېره",messagePh:"د پروژې توضیحات...",sendOrder:"په واټساپ کې غوښتنه واستوئ",
+footerText:"له مفکورې څخه تر ډیجیټل نړۍ",rights:"ټول حقونه خوندي دي.",menuOpen:"مینو"
 },
 en:{
 navHome:"Home",navServices:"Services",navPortfolio:"Portfolio",navAbout:"About",navContact:"Contact",
-tag:"Creative Digital Studio",heroTitle:"From Idea to Digital World",heroText:"We build your business's digital identity, from website design to professional logos and branding.",
-seeWork:"View Portfolio",orderNow:"Order Now",servicesTitle:"Our Services",servicesSub:"Creative solutions to grow your business",
-service1:"Website Design",service1p:"Modern, fast and mobile-friendly websites.",
-service2:"Logo Design",service2p:"A unique and memorable visual identity for your brand.",
-service3:"Branding",service3p:"A professional and consistent business identity.",
-service4:"Social Media Content",service4p:"Posts, stories and advertising designs.",
-service5:"Online Store",service5p:"Present and showcase your products online.",
-service6:"AI Services",service6p:"Creative use of AI tools for design and content.",
-portfolioTitle:"Our Portfolio",portfolioSub:"Some visual examples of PAMIR design styles",
-work1:"Website Design",work1p:"Modern professional design",work2:"Brand Identity",work2p:"Visual identity design",work3:"Social Media Design",work3p:"Posts and advertising",work4:"Logo Design",work4p:"Unique creative logos",
-sampleNote:"These are visual demonstrations, not verified client projects.",
-aboutTitle:"About PAMIR",aboutText:"PAMIR is a creative digital studio focused on turning ideas into beautiful and useful experiences. We aim to provide suitable digital solutions for every business.",
-processTitle:"How We Work",processSub:"From your first message to project delivery",
-step1:"Submit Request",step1p:"Share your needs and ideas with us.",step2:"Review & Agreement",step2p:"Project details, timeline and cost are discussed.",step3:"Project Design",step3p:"Design and development begin.",step4:"Final Delivery",step4p:"Your completed project is delivered after review.",
-testimonialTitle:"Why PAMIR?",testimonialSub:"Our commitment is quality and creativity in every project.",
-reason1:"Speed & Precision",reason1p:"Attention to detail and proper planning.",reason2:"Creative Ideas",reason2p:"Fresh solutions to present your brand.",reason3:"Direct Contact",reason3p:"Easy communication and order tracking through WhatsApp.",
-faqTitle:"Frequently Asked Questions",faq1:"How can I place an order?",faq1a:"Complete the order form and your message will be sent through WhatsApp.",faq2:"Are service prices fixed?",faq2a:"Pricing depends on the type and details of the project.",faq3:"Do you design for mobile devices?",faq3a:"Yes, websites are designed to work across different screen sizes.",faq4:"How can I see more work?",faq4a:"Contact us through WhatsApp to request more examples.",
-contactTitle:"Get in Touch",contactSub:"Turn your idea into a real project.",formTitle:"Order Form",
-namePlaceholder:"Your name",phonePlaceholder:"Phone number",chooseService:"Choose a service",
-option1:"Website Design",option2:"Logo Design",option3:"Branding",option4:"Social Media Design",option5:"Online Store",option6:"Other Services",
-messagePlaceholder:"Describe your project",sendOrder:"Send Order on WhatsApp",contactInfo:"Contact Information",location:"Kabul, Afghanistan",contactText:"Contact us through WhatsApp for consultation and orders.",chatWhatsApp:"Chat on WhatsApp",footerText:"From Idea to Digital World",rights:"All rights reserved."
+heroTag:"Digital Creative Studio",heroTitle:'From Idea to <span>Digital World</span>',
+heroText:"We help your business shine online with professional design, strong visual identity and modern digital solutions.",
+viewWork:"View Portfolio",startProject:"Start a Project",stat1:"Quality Commitment",stat2:"Customer Support",stat3:"Supported Languages",
+serviceMini:"Our Services",serviceTitle:"Digital Solutions for Your Growth",serviceDesc:"From brand identity to website development, we are here to help.",
+s1:"Website Design",sd1:"Modern, fast, beautiful and mobile-friendly websites.",
+s2:"Logo Design",sd2:"Unique and professional logos for your brand.",
+s3:"Branding",sd3:"Visual identity, colors and a distinctive brand style.",
+s4:"Social Media Design",sd4:"Creative promotional content for social platforms.",
+s5:"Online Store",sd5:"Online storefronts to showcase and sell products.",
+s6:"AI Services",sd6:"Creative use of AI tools for your business.",
+portMini:"Creative Gallery",portTitle:"Our Portfolio",portDesc:"Explore our designs and request a design you love.",
+all:"All",logo:"Logo",web:"Website",brand:"Branding",social:"Advertising",order:"Order Similar",
+p1:"Modern Logo",p1d:"Brand identity and symbol",p2:"Website Design",p2d:"Modern professional design",p3:"Brand Identity",p3d:"Unique visual style",p4:"Advertising Design",p4d:"Professional social media content",p5:"Digital Page",p5d:"User experience and web design",p6:"Ad Campaign",p6d:"Marketing content design",
+sampleNote:"Images in this gallery are demonstration examples, not claimed as real client projects.",
+visualText:"Creativity, Quality, Trust",aboutMini:"About Pamir",aboutTitle:"We Turn Ideas Into Reality",
+aboutDesc:"PAMIR DIGITAL STUDIO is a digital services studio focused on creative design and modern solutions to help businesses build a professional online presence.",
+c1:"Modern and custom design",c2:"Customer-focused approach",c3:"Direct support and communication",c4:"Project-based pricing",
+stepsMini:"Our Process",stepsTitle:"How Do We Work?",st1:"Place an Order",st1d:"Send us your needs and ideas.",st2:"Project Review",st2d:"We review project details and pricing.",st3:"Design & Development",st3d:"Your project is carefully created.",st4:"Project Delivery",st4d:"The final result is delivered to you.",
+whyMini:"Why Pamir?",whyTitle:"Why Choose Us?",w1:"Creativity",w1d:"Fresh ideas and unique designs for every project.",w2:"Quality",w2d:"Attention to detail and quality work.",w3:"Easy Communication",w3d:"Direct and easy contact through WhatsApp.",
+contactMini:"Get In Touch",contactTitle:"Your Next Project Starts Here!",contactDesc:"Send us a message to order a design or get more information.",
+phoneLabel:"WhatsApp:",addressLabel:"Location:",brandLabel:"Brand:",chooseService:"Choose a service",namePh:"Your name",phonePh:"Your phone number",messagePh:"Project details...",sendOrder:"Send Order on WhatsApp",
+footerText:"From Idea to Digital World",rights:"All rights reserved.",menuOpen:"Menu"
 }
 };
 
-function setLanguage(lang){
- const t=translations[lang]||translations.fa;
- document.documentElement.lang=lang;
- document.documentElement.dir=lang==="en"?"ltr":"rtl";
- document.querySelectorAll("[data-i]").forEach(el=>{
-  const key=el.getAttribute("data-i");
-  if(t[key])el.textContent=t[key];
- });
- document.querySelectorAll("[data-placeholder]").forEach(el=>{
-  const key=el.getAttribute("data-placeholder");
-  if(t[key])el.placeholder=t[key];
- });
- document.getElementById("language").value=lang;
- try{localStorage.setItem("pamir-language",lang)}catch(e){}
-}
-document.getElementById("language").addEventListener("change",e=>setLanguage(e.target.value));
+let currentLanguage = "fa";
 
-document.getElementById("orderForm").addEventListener("submit",function(e){
- e.preventDefault();
- const lang=document.getElementById("language").value;
- const t=translations[lang];
- const name=document.getElementById("customerName").value.trim();
- const phone=document.getElementById("customerPhone").value.trim();
- const service=document.getElementById("serviceSelect").value;
- const message=document.getElementById("customerMessage").value.trim();
- const text=
-  "PAMIR DIGITAL STUDIO - New Order\n"+
-  "Name: "+name+"\n"+
-  "Phone: "+phone+"\n"+
-  "Service: "+service+"\n"+
-  "Details: "+message;
- const url="https://wa.me/93767526658?text="+encodeURIComponent(text);
- window.open(url,"_blank");
+function setLanguage(lang){
+currentLanguage = lang;
+const t = translations[lang];
+document.documentElement.lang = lang;
+document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
+
+document.querySelectorAll("[data-t]").forEach(el=>{
+const key = el.getAttribute("data-t");
+if(t[key] !== undefined) el.innerHTML = t[key];
 });
-document.getElementById("year").textContent=new Date().getFullYear();
-let saved="fa";
-try{saved=localStorage.getItem("pamir-language")||"fa"}catch(e){}
-setLanguage(saved);
+
+document.querySelectorAll("[data-ph]").forEach(el=>{
+const key = el.getAttribute("data-ph");
+if(t[key] !== undefined) el.placeholder = t[key];
+});
+
+document.title = lang === "en" ? "PAMIR DIGITAL STUDIO" : "PAMIR DIGITAL STUDIO | از ایده تا دنیای دیجیتال";
+document.getElementById("language").value = lang;
+}
+
+document.getElementById("language").addEventListener("change",e=>{
+setLanguage(e.target.value);
+});
+
+document.getElementById("menuBtn").addEventListener("click",()=>{
+document.getElementById("nav").classList.toggle("open");
+});
+
+document.querySelectorAll("#nav a").forEach(a=>{
+a.addEventListener("click",()=>{
+document.getElementById("nav").classList.remove("open");
+});
+});
+
+document.querySelectorAll(".filter").forEach(button=>{
+button.addEventListener("click",()=>{
+document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+const filter = button.dataset.filter;
+
+document.querySelectorAll(".work").forEach(work=>{
+work.style.display = filter === "all" || work.dataset.category === filter ? "" : "none";
+});
+});
+});
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+
+document.querySelectorAll(".work img").forEach(img=>{
+img.addEventListener("click",()=>{
+lightboxImage.src = img.src;
+lightbox.classList.add("show");
+});
+});
+
+document.getElementById("closeLight").addEventListener("click",()=>{
+lightbox.classList.remove("show");
+lightboxImage.src = "";
+});
+
+lightbox.addEventListener("click",e=>{
+if(e.target === lightbox){
+lightbox.classList.remove("show");
+lightboxImage.src = "";
+}
+});
+
+document.querySelectorAll(".order-small").forEach(button=>{
+button.addEventListener("click",()=>{
+const design = button.dataset.order;
+const message = currentLanguage === "en"
+? "Hello, I want to order a design similar to: " + design
+: currentLanguage === "ps"
+? "سلام، زه د دې په څېر ډیزاین غواړم: " + design
+: "سلام، می‌خواهم طرحی مشابه این نمونه سفارش بدهم: " + design;
+
+window.open("https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message),"_blank");
+});
+});
+
+document.getElementById("orderForm").addEventListener("submit",e=>{
+e.preventDefault();
+
+const name = document.getElementById("customerName").value.trim();
+const contact = document.getElementById("customerPhone").value.trim();
+const service = document.getElementById("serviceSelect").value;
+const details = document.getElementById("customerMessage").value.trim();
+
+let message = currentLanguage === "en"
+? "Hello PAMIR DIGITAL STUDIO!\nName: " + name + "\nPhone: " + contact + "\nService: " + service + "\nDetails: " + details
+: currentLanguage === "ps"
+? "سلام PAMIR DIGITAL STUDIO!\nنوم: " + name + "\nشمېره: " + contact + "\nخدمت: " + service + "\nتوضیحات: " + details
+: "سلام PAMIR DIGITAL STUDIO!\nنام: " + name + "\nشماره تماس: " + contact + "\nخدمات: " + service + "\nتوضیحات: " + details;
+
+window.open("https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message),"_blank");
+});
+
+setLanguage("fa");
 </script>
+
 </body>
-  </html>
-  
+ </html>
+ 
