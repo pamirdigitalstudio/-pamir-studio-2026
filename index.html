@@ -1,199 +1,89 @@
-
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PAMIR DIGITAL STUDIO</title>
+<!-- PAMIR PREMIUM UPDATE -->
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#080d18;color:white;font-family:Tahoma,Arial;line-height:1.8}
-a{text-decoration:none;color:inherit}
-header{background:#101a2c;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
-.logo{font-size:23px;font-weight:bold;color:#28ddeb}
-nav a{margin:7px;font-size:13px}
-.hero{text-align:center;padding:90px 20px;background:radial-gradient(circle at top,#16465c,#080d18 70%)}
-.hero h1{font-size:38px;margin-bottom:15px}
-.hero h1 span{color:#28ddeb}
-.hero p{color:#c5d1df;max-width:650px;margin:0 auto 25px}
-.btn{display:inline-block;background:#28ddeb;color:#07111c;padding:11px 24px;border-radius:8px;font-weight:bold;margin:5px;border:0;cursor:pointer}
-.outline{background:transparent;color:#28ddeb;border:1px solid #28ddeb}
-section{padding:55px 7%}
-.heading{text-align:center;margin-bottom:30px}
-.heading h2{font-size:28px;color:#28ddeb}
-.heading p{color:#aebdce}
-.cards,.gallery,.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.card,.step{background:#111e32;border:1px solid #243a52;border-radius:13px;padding:22px;text-align:center}
-.card h3,.step h3{color:#28ddeb;margin-bottom:8px}
-.card p,.step p{color:#bdc9d7;font-size:14px}
-.work{background:#111e32;border-radius:12px;overflow:hidden;border:1px solid #243a52;cursor:pointer}
-.work img{width:100%;height:190px;object-fit:cover;display:block}
-.work div{padding:12px}
-.work h3{color:#28ddeb}
-.filters{text-align:center;margin-bottom:22px}
-.filters button{padding:8px 16px;margin:4px;border:1px solid #28ddeb;background:transparent;color:white;border-radius:20px}
-.filters button.active{background:#28ddeb;color:#07111c}
-.about{max-width:750px;margin:auto;text-align:center;color:#c6d0df}
-form{max-width:650px;margin:auto;background:#111e32;padding:22px;border-radius:14px}
-input,select,textarea{width:100%;padding:13px;margin:8px 0;background:#081321;color:white;border:1px solid #30465e;border-radius:7px;font-family:inherit}
-textarea{height:110px}
-form button{width:100%}
-footer{text-align:center;background:#101a2c;padding:28px;color:#bdc9d7}
-footer strong{color:#28ddeb}
-.modal{display:none;position:fixed;inset:0;background:#000e;z-index:20;align-items:center;justify-content:center;padding:15px}
-.modal-box{background:#111e32;padding:18px;border-radius:13px;max-width:550px;width:100%;text-align:center}
-.modal img{width:100%;max-height:320px;object-fit:contain}
-.close{float:left;color:#28ddeb;font-size:25px;cursor:pointer}
-@media(max-width:600px){header{flex-direction:column;gap:8px}nav a{font-size:12px;margin:4px}.hero h1{font-size:29px}}
+.pamir-extra{
+  direction:rtl;
+  padding:55px 20px;
+  background:linear-gradient(135deg,#07111f,#101e32);
+  color:#fff;
+  text-align:center;
+  font-family:Arial,sans-serif;
+}
+.pamir-extra h2{color:#38d9ff;font-size:28px}
+.pamir-extra p{color:#cbd5e1;line-height:2}
+.pamir-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  max-width:1000px;
+  margin:25px auto;
+}
+.pamir-card{
+  background:#14243a;
+  border:1px solid #244765;
+  padding:24px;
+  border-radius:16px;
+}
+.pamir-card h3{color:#38d9ff}
+.pamir-extra a{
+  display:inline-block;
+  background:#08b9d9;
+  color:#00131e;
+  padding:13px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+.pamir-faq{
+  max-width:800px;
+  margin:15px auto;
+  text-align:right;
+}
+.pamir-faq details{
+  background:#14243a;
+  margin:10px 0;
+  padding:17px;
+  border-radius:12px;
+}
+.pamir-faq summary{cursor:pointer;color:#38d9ff}
 </style>
-</head>
-<body>
-<header>
-<div class="logo">PAMIR DIGITAL</div>
-<nav>
-<a href="#home">خانه</a>
-<a href="#services">خدمات</a>
-<a href="#gallery">دیزاین‌ها</a>
-<a href="#order">سفارش</a>
-</nav>
-</header>
 
-<div class="hero" id="home">
-<h1>به دنیای دیجیتال <span>PAMIR</span> خوش آمدید</h1>
-<p>از ایده تا دنیای دیجیتال؛ ما به کسب‌وکار شما هویت، زیبایی و حضور حرفه‌ای آنلاین می‌بخشیم.</p>
-<a class="btn" href="#gallery">دیدن دیزاین‌ها</a>
-<a class="btn outline" href="#order">شروع سفارش</a>
-</div>
+<section class="pamir-extra">
+  <h2>چرا PAMIR DIGITAL STUDIO؟</h2>
+  <p>ما ایده‌های شما را به تجربه‌های حرفه‌ای دیجیتال تبدیل می‌کنیم.</p>
 
-<section id="services">
-<div class="heading"><h2>خدمات ما</h2><p>راهکارهای خلاقانه برای رشد کسب‌وکار شما</p></div>
-<div class="cards">
-<div class="card"><h3>طراحی وب‌سایت</h3><p>ساخت سایت‌های مدرن، حرفه‌ای و واکنش‌گرا.</p></div>
-<div class="card"><h3>لوگو و برندینگ</h3><p>هویت بصری خاص برای برند شما.</p></div>
-<div class="card"><h3>شبکه‌های اجتماعی</h3><p>پست، استوری و بنرهای تبلیغاتی.</p></div>
-<div class="card"><h3>فروشگاه آنلاین</h3><p>معرفی و نمایش محصولات شما.</p></div>
-<div class="card"><h3>هوش مصنوعی</h3><p>ساخت محتوای خلاقانه و دیجیتال.</p></div>
-</div>
+  <div class="pamir-cards">
+    <div class="pamir-card">
+      <h3>کیفیت حرفه‌ای</h3>
+      <p>طراحی مدرن، زیبا و متناسب با نیاز کسب‌وکار شما.</p>
+    </div>
+    <div class="pamir-card">
+      <h3>طراحی اختصاصی</h3>
+      <p>هر پروژه با توجه به سلیقه و هویت برند شما ساخته می‌شود.</p>
+    </div>
+    <div class="pamir-card">
+      <h3>ارتباط مستقیم</h3>
+      <p>ثبت سفارش و ارتباط آسان از طریق واتساپ.</p>
+    </div>
+  </div>
+
+  <h2>سوالات متداول</h2>
+  <div class="pamir-faq">
+    <details>
+      <summary>چگونه سفارش ثبت کنم؟</summary>
+      <p>از طریق واتساپ با ما تماس بگیرید و جزئیات پروژه را بفرستید.</p>
+    </details>
+    <details>
+      <summary>چه خدماتی ارائه می‌کنید؟</summary>
+      <p>طراحی سایت، لوگو، برندینگ و محتوای شبکه‌های اجتماعی.</p>
+    </details>
+    <details>
+      <summary>آیا طراحی مطابق سلیقه مشتری انجام می‌شود؟</summary>
+      <p>بلی، طراحی‌ها مطابق نیاز و سلیقه شما انجام می‌شوند.</p>
+    </details>
+  </div>
+
+  <h2>آماده شروع هستید؟</h2>
+  <p>ایده خود را به یک پروژه دیجیتال حرفه‌ای تبدیل کنید.</p>
+  <a href="https://wa.me/93767526658" target="_blank">سفارش از طریق واتساپ</a>
 </section>
-
-<section id="gallery">
-<div class="heading"><h2>گالری نمونه‌کارها</h2><p>برای مشاهده جزئیات روی هر طرح کلیک کنید.</p></div>
-<div class="filters">
-<button class="active" onclick="filterWorks('all',this)">همه</button>
-<button onclick="filterWorks('logo',this)">لوگو</button>
-<button onclick="filterWorks('web',this)">وب‌سایت</button>
-<button onclick="filterWorks('social',this)">شبکه اجتماعی</button>
-</div>
-<div class="gallery">
-<div class="work" data-type="logo" onclick="showWork(this)">
-<img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=700" alt="طراحی لوگو">
-<div><h3>طراحی هویت برند</h3><p>لوگو و هویت بصری</p></div>
-</div>
-<div class="work" data-type="web" onclick="showWork(this)">
-<img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700" alt="طراحی وب">
-<div><h3>طراحی وب‌سایت</h3><p>وب‌سایت مدرن</p></div>
-</div>
-<div class="work" data-type="social" onclick="showWork(this)">
-<img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=700" alt="شبکه اجتماعی">
-<div><h3>طراحی سوشال مدیا</h3><p>محتوای تبلیغاتی</p></div>
-</div>
-<div class="work" data-type="logo" onclick="showWork(this)">
-<img src="https://images.unsplash.com/photo-1634942536790-2533a6b8c7a1?w=700" alt="طرح گرافیکی">
-<div><h3>طراحی گرافیکی</h3><p>طرح اختصاصی</p></div>
-</div>
-<div class="work" data-type="web" onclick="showWork(this)">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700" alt="کدنویسی">
-<div><h3>طراحی دیجیتال</h3><p>طراحی حرفه‌ای</p></div>
-</div>
-<div class="work" data-type="social" onclick="showWork(this)">
-<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=700" alt="طرح تبلیغاتی">
-<div><h3>طرح تبلیغاتی</h3><p>پست و بنر</p></div>
-</div>
-</div>
-</section>
-
-<section id="about">
-<div class="heading"><h2>درباره PAMIR</h2></div>
-<p class="about">PAMIR DIGITAL STUDIO یک استودیوی خلاق برای ارائه خدمات طراحی و راهکارهای دیجیتال است. هدف ما تبدیل ایده‌های شما به طرح‌هایی زیبا، کاربردی و حرفه‌ای است.</p>
-</section>
-
-<section>
-<div class="heading"><h2>مراحل همکاری</h2><p>ساده، سریع و حرفه‌ای</p></div>
-<div class="steps">
-<div class="step"><h3>01 ـ ثبت سفارش</h3><p>نیاز خود را با ما شریک کنید.</p></div>
-<div class="step"><h3>02 ـ بررسی ایده</h3><p>جزئیات پروژه بررسی می‌شود.</p></div>
-<div class="step"><h3>03 ـ طراحی</h3><p>کار شما با دقت طراحی می‌شود.</p></div>
-<div class="step"><h3>04 ـ تحویل</h3><p>طرح نهایی به شما تحویل می‌شود.</p></div>
-</div>
-</section>
-
-<section id="order">
-<div class="heading"><h2>ثبت سفارش</h2><p>فرم را تکمیل کنید تا در واتساپ با شما ارتباط بگیریم.</p></div>
-<form onsubmit="sendOrder(event)">
-<input id="name" placeholder="نام شما" required>
-<input id="phone" placeholder="شماره تماس" required>
-<select id="service" required>
-<option value="">نوع خدمت را انتخاب کنید</option>
-<option>طراحی وب‌سایت</option>
-<option>طراحی لوگو و برندینگ</option>
-<option>طراحی پست و استوری</option>
-<option>فروشگاه آنلاین</option>
-<option>خدمات هوش مصنوعی</option>
-<option>سایر خدمات</option>
-</select>
-<textarea id="details" placeholder="توضیحات سفارش شما"></textarea>
-<button class="btn" type="submit">ارسال سفارش در واتساپ</button>
-</form>
-</section>
-
-<footer>
-<p><strong>PAMIR DIGITAL STUDIO</strong></p>
-<p>از ایده تا دنیای دیجیتال</p>
-<p>کابل، افغانستان | واتساپ: 0767526658</p>
-<p>© 2026 PAMIR. All rights reserved.</p>
-</footer>
-
-<div class="modal" id="modal" onclick="if(event.target===this)closeWork()">
-<div class="modal-box">
-<span class="close" onclick="closeWork()">×</span>
-<img id="modalImg" src="" alt="نمونه دیزاین">
-<h3 id="modalTitle"></h3>
-<p id="modalDesc"></p>
-<button class="btn" onclick="orderThis()">سفارش همین دیزاین</button>
-</div>
-</div>
-
-<script>
-let selectedWork='';
-function filterWorks(type,btn){
-document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
-document.querySelectorAll('.work').forEach(w=>{
-w.style.display=(type==='all'||w.dataset.type===type)?'block':'none';
-});
-}
-function showWork(el){
-selectedWork=el.querySelector('h3').innerText;
-document.getElementById('modalImg').src=el.querySelector('img').src;
-document.getElementById('modalTitle').innerText=selectedWork;
-document.getElementById('modalDesc').innerText=el.querySelector('p').innerText;
-document.getElementById('modal').style.display='flex';
-}
-function closeWork(){document.getElementById('modal').style.display='none'}
-function orderThis(){
-let msg='سلام PAMIR، می‌خواهم این دیزاین را سفارش بدهم: '+selectedWork;
-window.open('https://wa.me/93767526658?text='+encodeURIComponent(msg),'_blank');
-}
-function sendOrder(e){
-e.preventDefault();
-let msg='سلام PAMIR DIGITAL STUDIO\nنام: '+document.getElementById('name').value+
-'\nشماره: '+document.getElementById('phone').value+
-'\nخدمت: '+document.getElementById('service').value+
-'\nتوضیحات: '+document.getElementById('details').value;
-window.open('https://wa.me/93767526658?text='+encodeURIComponent(msg),'_blank');
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeWork()});
-</script>
-</body>
-  </html>
-  
+<!-- END PAMIR PREMIUM UPDATE -->
